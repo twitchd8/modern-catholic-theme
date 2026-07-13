@@ -36,6 +36,11 @@
 		{
 			"area": "footer",
 			"name": "footer"
+		},
+		{
+			"area": "uncategorized",
+			"name": "todays-readings",
+			"title": "Today’s Readings"
 		}
 	],
 	"version": 3

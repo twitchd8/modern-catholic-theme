@@ -7,9 +7,55 @@ Description: A modern block theme built specifically with the Catholic Church in
 Requires at least: 7.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Version: 1.0.0
+Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: twitch3d-modern-catholic
 Tags: 
 */
+
+.church-post-card-grid .wp-block-post-template {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: clamp(1rem, 2.5vw, 2rem);
+}
+
+.church-post-card {
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+	transition: box-shadow 160ms ease, transform 160ms ease;
+}
+
+.church-post-card:hover,
+.church-post-card:focus-within {
+	box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.12);
+	transform: translateY(-0.2rem);
+}
+
+.church-post-card .wp-block-post-title a::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+}
+
+.church-post-card .wp-block-post-featured-image a,
+.church-post-card .wp-block-post-author a,
+.church-post-card .wp-block-post-date a,
+.church-post-card .wp-block-post-excerpt__more-link {
+	position: relative;
+	z-index: 2;
+}
+
+@media (max-width: 52rem) {
+	.church-post-card-grid .wp-block-post-template {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 36rem) {
+	.church-post-card-grid .wp-block-post-template {
+		grid-template-columns: 1fr;
+	}
+}
