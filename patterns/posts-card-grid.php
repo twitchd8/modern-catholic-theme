@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Posts: Card Grid
- * Slug: twitch3d-modern-catholic/posts-card-grid
+ * Slug: modern-catholic/posts-card-grid
  * Categories: posts
  * Description: A responsive post-card grid with featured image, title, author, date, excerpt, and pagination.
  * Block Types: core/query

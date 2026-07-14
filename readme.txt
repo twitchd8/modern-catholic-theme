@@ -1,4 +1,4 @@
-== Twitch3d-Modern Catholic ==
+== Modern Catholic ==
 
 Contributors: Andrew T. Schmitt
 Requires at least: 7.0
@@ -41,8 +41,8 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 
 == Copyright ==
 
-Twitch3d-Modern Catholic WordPress Theme, (C) 2026 Andrew T. Schmitt
-Twitch3d-Modern Catholic is distributed under the terms of the GNU GPL.
+Modern Catholic WordPress Theme, (C) 2026 Andrew T. Schmitt
+Modern Catholic is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

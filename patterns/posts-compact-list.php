@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Posts: Compact List
- * Slug: twitch3d-modern-catholic/posts-compact-list
+ * Slug: modern-catholic/posts-compact-list
  * Categories: posts
  * Description: A compact archive list with title, author, date, excerpt, and pagination.
  * Block Types: core/query
