@@ -1,5 +1,6 @@
 {
 	"$schema": "https://schemas.wp.org/wp/7.0/theme.json",
+	"version": 3,
 	"settings": {
 		"appearanceTools": true,
 		"layout": {
@@ -7,7 +8,14 @@
 			"wideSize": "75rem"
 		},
 		"spacing": {
-			"units": [ "%", "px", "em", "rem", "vh", "vw" ]
+			"units": [
+				"%",
+				"px",
+				"em",
+				"rem",
+				"vh",
+				"vw"
+			]
 		},
 		"typography": {
 			"fontFamilies": [
@@ -41,7 +49,21 @@
 			"area": "uncategorized",
 			"name": "todays-readings",
 			"title": "Today’s Readings"
+		},
+		{
+			"area": "uncategorized",
+			"name": "parish-mass-times",
+			"title": "Parish Mass Times"
+		},
+		{
+			"area": "uncategorized",
+			"name": "parish-welcome",
+			"title": "Parish Welcome"
+		},
+		{
+			"area": "uncategorized",
+			"name": "parish-life-links",
+			"title": "Parish Life Links"
 		}
-	],
-	"version": 3
+	]
 }
