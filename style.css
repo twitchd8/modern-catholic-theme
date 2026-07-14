@@ -7,12 +7,41 @@ Description: A modern block theme built specifically with the Catholic Church in
 Requires at least: 7.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Version: 1.2.0
+Version: 1.2.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: modern-catholic
 Tags: 
 */
+
+/*
+ * Let the front-page hero occupy the first viewport while keeping the shared
+ * header in normal document flow on every other template.
+ */
+.front-page-overlay-header {
+	position: absolute;
+	inset: 0 0 auto;
+	z-index: 10;
+	width: 100%;
+	color: #fff;
+	background: transparent;
+}
+
+.front-page-overlay-header .modern-catholic-header-shell,
+.front-page-overlay-header .modern-catholic-header-bar {
+	background: transparent;
+}
+
+.front-page-overlay-header .wp-block-site-title a,
+.front-page-overlay-header .wp-block-site-tagline,
+.front-page-overlay-header .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content,
+.front-page-overlay-header .wp-block-navigation__responsive-container-open {
+	color: inherit;
+}
+
+.front-page-overlay-header .wp-block-navigation__responsive-container-open svg {
+	fill: currentColor;
+}
 
 .church-post-card-grid .wp-block-post-template {
 	display: grid;
