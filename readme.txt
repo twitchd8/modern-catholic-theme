@@ -20,14 +20,24 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 * Uses the visitor's system font stack without requiring an external font service.
 * Uses a readable 42rem maximum content width and a 75rem wide-content maximum.
 * Uses fluid horizontal page gutters that scale from 1rem to 2.5rem according to the viewport width.
-* Preserves full-width block backgrounds while keeping their inner content aligned to the page gutters.
+* Frames the entire site in a fluid, centered shell with an 80rem maximum width.
+* Keeps full-width blocks, including the front-page hero, inside that shared site shell.
+* Preserves Global Styles background colors and texture images behind the transparent site shell.
 * Includes reusable header and footer template parts.
 * Uses the responsive Navigation block, including its built-in mobile overlay behavior.
+* Overlays the front-page header on the hero and converts it to a readable sticky bar after the hero scrolls away.
 * Includes a constrained index template with a post query, featured images, post metadata, and pagination.
-* Relies on native block responsiveness and wrapping rather than a custom CSS or JavaScript breakpoint system.
+* Uses native block responsiveness and a small dependency-free front-page script for the sticky-header transition.
 
 
 == Changelog ==
+
+= 1.3.0 =
+* Added a centered, fluid 80rem maximum site shell for the complete site layout.
+* Kept the front-page hero and navigation within the same responsive shell.
+* Preserved Site Editor background images and textures throughout the centered layout.
+* Added a transparent hero-overlay header that becomes a dark sticky bar after the hero passes.
+* Accounted for the WordPress admin bar, reduced-motion preferences, and scrollbar-safe widths.
 
 = 1.0.0 =
 * Created the initial full-site-editing theme structure.
