@@ -7,7 +7,7 @@ Description: A modern block theme built specifically with the Catholic Church in
 Requires at least: 7.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Version: 1.4.2
+Version: 1.4.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: modern-catholic
@@ -143,6 +143,13 @@ body.admin-bar .front-page-overlay-header {
 @media (max-width: 782px) {
 	body.admin-bar .front-page-overlay-header {
 		top: 46px;
+	}
+}
+
+/* WordPress's mobile admin bar scrolls away below 600px. */
+@media (max-width: 600px) {
+	body.admin-bar .front-page-overlay-header.is-past-hero {
+		top: 0;
 	}
 }
 

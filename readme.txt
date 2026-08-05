@@ -34,6 +34,9 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 
 == Changelog ==
 
+= 1.4.3 =
+* Removed the obsolete mobile admin-bar offset when the front-page header enters sticky mode.
+
 = 1.4.2 =
 * Prevented saved Site Editor color utilities from darkening the front-page site title.
 
