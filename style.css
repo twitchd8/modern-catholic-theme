@@ -7,7 +7,7 @@ Description: A modern block theme built specifically with the Catholic Church in
 Requires at least: 7.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Version: 1.3.1
+Version: 1.4.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: modern-catholic
@@ -22,8 +22,13 @@ Tags:
  */
 :root {
 	--modern-catholic-site-max: 80rem;
-	--modern-catholic-site-surface: #f7f2e8;
-	--modern-catholic-sticky-header: rgba(20, 20, 20, 0.94);
+	--modern-catholic-color-surface: var(--wp--preset--color--almandine, #f4eedc);
+	--modern-catholic-color-surface-alt: var(--wp--preset--color--barley, #d9c68f);
+	--modern-catholic-color-structure: var(--wp--preset--color--mountain-moss, #66796c);
+	--modern-catholic-color-accent: var(--wp--preset--color--sanctuary-burgundy, #7a2038);
+	--modern-catholic-color-text: var(--wp--preset--color--black, #28251f);
+	--modern-catholic-color-on-accent: var(--wp--preset--color--white, #fff);
+	--modern-catholic-sticky-header: rgba(75, 20, 34, 0.96);
 }
 
 body > .wp-site-blocks {
@@ -32,8 +37,42 @@ body > .wp-site-blocks {
 	max-width: var(--modern-catholic-site-max);
 	min-height: 100vh;
 	margin-inline: auto;
-	background-color: var(--modern-catholic-site-surface);
+	color: var(--modern-catholic-color-text);
+	background-color: var(--modern-catholic-color-surface);
 	box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.08);
+}
+
+.wp-site-blocks :where(a:not(.wp-element-button)) {
+	text-decoration-color: color-mix(in srgb, var(--modern-catholic-color-accent) 55%, transparent);
+	text-underline-offset: 0.16em;
+}
+
+.wp-site-blocks :where(a:not(.wp-element-button)):hover,
+.wp-site-blocks :where(a:not(.wp-element-button)):focus-visible {
+	text-decoration-color: currentColor;
+}
+
+.wp-element-button,
+.wp-block-button__link {
+	transition: background-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.wp-element-button:hover,
+.wp-element-button:focus-visible,
+.wp-block-button__link:hover,
+.wp-block-button__link:focus-visible {
+	background-color: #5e172c;
+	box-shadow: 0 0.35rem 1rem rgba(70, 20, 33, 0.2);
+	transform: translateY(-0.08rem);
+}
+
+.has-barley-background-color {
+	color: var(--modern-catholic-color-text);
+}
+
+.has-mountain-moss-background-color,
+.has-sanctuary-burgundy-background-color {
+	color: var(--modern-catholic-color-on-accent);
 }
 
 /*
@@ -62,6 +101,7 @@ body > .wp-site-blocks {
 	background: transparent;
 }
 
+.front-page-overlay-header .wp-block-site-title,
 .front-page-overlay-header .wp-block-site-title a,
 .front-page-overlay-header .wp-block-site-tagline,
 .front-page-overlay-header .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content,
@@ -99,8 +139,17 @@ body.admin-bar .front-page-overlay-header {
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.front-page-overlay-header {
+	.front-page-overlay-header,
+	.wp-element-button,
+	.wp-block-button__link {
 		transition: none;
+	}
+
+	.wp-element-button:hover,
+	.wp-element-button:focus-visible,
+	.wp-block-button__link:hover,
+	.wp-block-button__link:focus-visible {
+		transform: none;
 	}
 }
 

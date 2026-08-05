@@ -23,6 +23,8 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 * Frames the entire site in a fluid, centered shell with an 80rem maximum width.
 * Keeps full-width blocks, including the front-page hero, inside that shared site shell.
 * Uses a warm off-white site surface while preserving Global Styles background textures in the outer margins.
+* Provides one native WordPress palette with Almandine Ivory, Barley Gold, Mountain Moss, Sanctuary Burgundy, Ink, and White.
+* Maps theme surfaces, text, links, buttons, and structural accents to reusable palette variables.
 * Includes reusable header and footer template parts.
 * Uses the responsive Navigation block, including its built-in mobile overlay behavior.
 * Overlays the front-page header on the hero and converts it to a readable sticky bar after the hero scrolls away.
@@ -31,6 +33,11 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 
 
 == Changelog ==
+
+= 1.4.0 =
+* Added a modular, photo-inspired color palette to Global Styles.
+* Applied Almandine Ivory to the site surface, Barley Gold to the welcome section, and Sanctuary Burgundy to links and primary actions.
+* Added Ink and White as accessible text colors while reserving Mountain Moss for secondary structure.
 
 = 1.3.1 =
 * Removed the default block gap between the front-page overlay header and hero.

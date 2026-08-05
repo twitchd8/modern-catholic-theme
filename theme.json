@@ -3,6 +3,42 @@
 	"version": 3,
 	"settings": {
 		"appearanceTools": true,
+		"color": {
+			"custom": false,
+			"defaultPalette": false,
+			"palette": [
+				{
+					"color": "#f4eedc",
+					"name": "Almandine Ivory",
+					"slug": "almandine"
+				},
+				{
+					"color": "#d9c68f",
+					"name": "Barley Gold",
+					"slug": "barley"
+				},
+				{
+					"color": "#66796c",
+					"name": "Mountain Moss",
+					"slug": "mountain-moss"
+				},
+				{
+					"color": "#7a2038",
+					"name": "Sanctuary Burgundy",
+					"slug": "sanctuary-burgundy"
+				},
+				{
+					"color": "#28251f",
+					"name": "Ink",
+					"slug": "black"
+				},
+				{
+					"color": "#ffffff",
+					"name": "White",
+					"slug": "white"
+				}
+			]
+		},
 		"layout": {
 			"contentSize": "42rem",
 			"wideSize": "75rem"
@@ -29,6 +65,28 @@
 		"useRootPaddingAwareAlignments": true
 	},
 	"styles": {
+		"color": {
+			"background": "var:preset|color|almandine",
+			"text": "var:preset|color|black"
+		},
+		"elements": {
+			"button": {
+				"color": {
+					"background": "var:preset|color|sanctuary-burgundy",
+					"text": "var:preset|color|white"
+				}
+			},
+			"heading": {
+				"color": {
+					"text": "var:preset|color|black"
+				}
+			},
+			"link": {
+				"color": {
+					"text": "var:preset|color|sanctuary-burgundy"
+				}
+			}
+		},
 		"spacing": {
 			"padding": {
 				"left": "clamp(1rem, 4vw, 2.5rem)",
