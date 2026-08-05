@@ -34,6 +34,9 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 
 == Changelog ==
 
+= 1.4.1 =
+* Strengthened the front-page site title against both the hero image and sticky burgundy header.
+
 = 1.4.0 =
 * Added a modular, photo-inspired color palette to Global Styles.
 * Applied Almandine Ivory to the site surface, Barley Gold to the welcome section, and Sanctuary Burgundy to links and primary actions.
