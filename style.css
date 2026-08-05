@@ -7,7 +7,7 @@ Description: A modern block theme built specifically with the Catholic Church in
 Requires at least: 7.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Version: 1.5.0
+Version: 1.5.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: modern-catholic
@@ -211,6 +211,18 @@ body.admin-bar .front-page-overlay-header {
 		display: flex !important;
 	}
 
+	.modern-catholic-header-tools .wp-block-search {
+		display: none;
+	}
+
+	.modern-catholic-mobile-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) {
+		display: none !important;
+	}
+
+	.modern-catholic-mobile-navigation .wp-block-navigation__responsive-container-open {
+		display: flex !important;
+	}
+
 	.modern-catholic-mobile-navigation .wp-block-navigation__responsive-container.is-menu-open {
 		position: fixed;
 		inset: 0;
@@ -224,15 +236,20 @@ body.admin-bar .front-page-overlay-header {
 		background-color: var(--modern-catholic-color-surface) !important;
 	}
 
-	.modern-catholic-mobile-navigation .wp-block-navigation__responsive-container-content > .wp-block-navigation__container > .wp-block-navigation-item:nth-last-child(3) {
+	.modern-catholic-mobile-navigation .modern-catholic-mobile-utility-first {
 		margin-block-start: 1rem;
 		padding-block-start: 1rem;
 		border-block-start: 1px solid color-mix(in srgb, var(--modern-catholic-color-structure) 45%, transparent);
 	}
 
-	.modern-catholic-mobile-navigation .wp-block-navigation__responsive-container-content > .wp-block-navigation__container > .wp-block-navigation-item:nth-last-child(-n + 3) > .wp-block-navigation-item__content {
+	.modern-catholic-mobile-navigation .modern-catholic-mobile-utility-link > .wp-block-navigation-item__content {
 		color: var(--modern-catholic-color-accent) !important;
 		font-weight: 700;
+	}
+
+	.modern-catholic-mobile-menu-search {
+		width: min(20rem, 100%);
+		margin-block-start: 1.5rem;
 	}
 }
 
@@ -240,6 +257,13 @@ body.admin-bar .front-page-overlay-header {
 @media (max-width: 600px) {
 	body.admin-bar .front-page-overlay-header.is-past-hero {
 		top: 0;
+	}
+}
+
+@media (max-width: 420px) {
+	.front-page-overlay-header + .wp-block-cover {
+		align-items: flex-start;
+		padding-block-start: 8.5rem;
 	}
 }
 

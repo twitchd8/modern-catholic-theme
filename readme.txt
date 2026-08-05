@@ -34,6 +34,11 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 
 == Changelog ==
 
+= 1.5.1 =
+* Moved Search from the fixed mobile header into the managed mobile navigation drawer.
+* Forced the hamburger treatment through the complete mobile and tablet breakpoint.
+* Prevented the expanded mobile header from obscuring front-page hero text.
+
 = 1.5.0 =
 * Added a separate desktop utility-navigation tier for Bulletin, Contact Us, and Register Here.
 * Connected Primary, Utility, and Mobile headers to independently managed WordPress Navigation records.

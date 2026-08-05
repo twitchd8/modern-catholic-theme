@@ -34,6 +34,7 @@ A tag identifies an exact historical commit. Do not move or reuse an existing re
 
 WordPress Navigation records and saved template-part overrides live in the site database, not in the theme repository.
 
+- Site Editor changes do not update theme files automatically. Deliberately synchronize reusable changes into the repository or export them with Create Block Theme.
 - ATS-WP-DEV currently uses separately managed Primary, Utility, and Mobile Navigation records.
 - The active saved Header template part references those records.
 - `parts/header.html` retains equivalent inline Navigation Link fallbacks so the theme remains portable.
