@@ -34,6 +34,9 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 
 == Changelog ==
 
+= 1.4.4 =
+* Added a subtle Sanctuary Burgundy wash behind the header while it overlays the hero.
+
 = 1.4.3 =
 * Removed the obsolete mobile admin-bar offset when the front-page header enters sticky mode.
 
