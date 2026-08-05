@@ -7,7 +7,7 @@ Description: A modern block theme built specifically with the Catholic Church in
 Requires at least: 7.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Version: 1.4.5
+Version: 1.5.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: modern-catholic
@@ -42,6 +42,48 @@ body > .wp-site-blocks {
 	color: var(--modern-catholic-color-text);
 	background-color: var(--modern-catholic-color-surface);
 	box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.08);
+}
+
+.modern-catholic-nav-cluster {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 0.55rem;
+}
+
+.modern-catholic-utility-navigation {
+	padding: 0.45rem 0.75rem;
+	color: var(--modern-catholic-color-on-accent);
+	background: var(--modern-catholic-color-accent-strong);
+	border-radius: 0.2rem;
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.045em;
+	line-height: 1.25;
+	text-transform: uppercase;
+}
+
+.modern-catholic-utility-navigation .wp-block-navigation-item + .wp-block-navigation-item::before {
+	content: "/";
+	margin-inline-end: var(--wp--style--block-gap, 0.75rem);
+	opacity: 0.55;
+}
+
+.modern-catholic-utility-navigation .wp-block-navigation-item__content,
+.modern-catholic-utility-navigation .wp-block-navigation-item__content:visited {
+	color: inherit;
+	text-decoration: none;
+}
+
+.modern-catholic-utility-navigation .wp-block-navigation-item__content:hover,
+.modern-catholic-utility-navigation .wp-block-navigation-item__content:focus-visible {
+	text-decoration: underline;
+	text-decoration-thickness: 0.1em;
+	text-underline-offset: 0.22em;
+}
+
+.modern-catholic-mobile-navigation {
+	display: none !important;
 }
 
 .wp-site-blocks :where(a:not(.wp-element-button)) {
@@ -158,6 +200,39 @@ body.admin-bar .front-page-overlay-header {
 @media (max-width: 782px) {
 	body.admin-bar .front-page-overlay-header {
 		top: 46px;
+	}
+
+	.modern-catholic-utility-navigation,
+	.modern-catholic-primary-navigation {
+		display: none !important;
+	}
+
+	.modern-catholic-mobile-navigation {
+		display: flex !important;
+	}
+
+	.modern-catholic-mobile-navigation .wp-block-navigation__responsive-container.is-menu-open {
+		position: fixed;
+		inset: 0;
+		box-sizing: border-box;
+		width: auto;
+		height: 100vh;
+		height: 100dvh;
+		min-height: 0;
+		overflow-x: hidden;
+		color: var(--modern-catholic-color-text) !important;
+		background-color: var(--modern-catholic-color-surface) !important;
+	}
+
+	.modern-catholic-mobile-navigation .wp-block-navigation__responsive-container-content > .wp-block-navigation__container > .wp-block-navigation-item:nth-last-child(3) {
+		margin-block-start: 1rem;
+		padding-block-start: 1rem;
+		border-block-start: 1px solid color-mix(in srgb, var(--modern-catholic-color-structure) 45%, transparent);
+	}
+
+	.modern-catholic-mobile-navigation .wp-block-navigation__responsive-container-content > .wp-block-navigation__container > .wp-block-navigation-item:nth-last-child(-n + 3) > .wp-block-navigation-item__content {
+		color: var(--modern-catholic-color-accent) !important;
+		font-weight: 700;
 	}
 }
 

@@ -34,6 +34,12 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 
 == Changelog ==
 
+= 1.5.0 =
+* Added a separate desktop utility-navigation tier for Bulletin, Contact Us, and Register Here.
+* Connected Primary, Utility, and Mobile headers to independently managed WordPress Navigation records.
+* Kept portable Navigation Link fallbacks in the theme source for new installations.
+* Combined primary and utility destinations into a single full-viewport navigation drawer on mobile.
+
 = 1.4.5 =
 * Matched the front-page hero actions to the standard Sanctuary Burgundy button treatment.
 * Derived hover and sticky-header shades from semantic palette variables for future style variations.

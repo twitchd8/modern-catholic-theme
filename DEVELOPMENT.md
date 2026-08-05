@@ -31,3 +31,11 @@ The initial production breakpoint is tagged:
 A tag identifies an exact historical commit. Do not move or reuse an existing release tag.
 
 ## Important WordPress Boundary
+
+WordPress Navigation records and saved template-part overrides live in the site database, not in the theme repository.
+
+- ATS-WP-DEV currently uses separately managed Primary, Utility, and Mobile Navigation records.
+- The active saved Header template part references those records.
+- `parts/header.html` retains equivalent inline Navigation Link fallbacks so the theme remains portable.
+- A new installation must not silently create navigation records on activation. Any future setup action must require administrator consent.
+- The Bulletin destination is provided by the Parish Bulletins plugin. Contact Us and Register Here require pages to be created before launch.
