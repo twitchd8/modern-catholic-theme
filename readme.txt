@@ -34,6 +34,9 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 
 == Changelog ==
 
+= 1.4.2 =
+* Prevented saved Site Editor color utilities from darkening the front-page site title.
+
 = 1.4.1 =
 * Strengthened the front-page site title against both the hero image and sticky burgundy header.
 
