@@ -7,7 +7,7 @@ Description: A modern block theme built specifically with the Catholic Church in
 Requires at least: 7.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Version: 1.3.0
+Version: 1.3.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: modern-catholic
@@ -22,6 +22,7 @@ Tags:
  */
 :root {
 	--modern-catholic-site-max: 80rem;
+	--modern-catholic-site-surface: #f7f2e8;
 	--modern-catholic-sticky-header: rgba(20, 20, 20, 0.94);
 }
 
@@ -31,7 +32,7 @@ body > .wp-site-blocks {
 	max-width: var(--modern-catholic-site-max);
 	min-height: 100vh;
 	margin-inline: auto;
-	background-color: transparent;
+	background-color: var(--modern-catholic-site-surface);
 	box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.08);
 }
 
@@ -50,6 +51,10 @@ body > .wp-site-blocks {
 	color: #fff;
 	background: transparent;
 	transition: background-color 180ms ease, box-shadow 180ms ease, backdrop-filter 180ms ease;
+}
+
+.front-page-overlay-header + .wp-block-cover {
+	margin-block-start: 0;
 }
 
 .front-page-overlay-header .modern-catholic-header-shell,
