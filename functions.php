@@ -45,3 +45,5 @@ function modern_catholic_enqueue_styles() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'modern_catholic_enqueue_styles' );
+
+require_once get_theme_file_path( 'inc/parish-settings.php' );
