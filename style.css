@@ -7,7 +7,7 @@ Description: A modern block theme built specifically with the Catholic Church in
 Requires at least: 7.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Version: 1.4.4
+Version: 1.4.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: modern-catholic
@@ -28,8 +28,9 @@ Tags:
 	--modern-catholic-color-accent: var(--wp--preset--color--sanctuary-burgundy, #7a2038);
 	--modern-catholic-color-text: var(--wp--preset--color--black, #28251f);
 	--modern-catholic-color-on-accent: var(--wp--preset--color--white, #fff);
+	--modern-catholic-color-accent-strong: color-mix(in srgb, var(--modern-catholic-color-accent) 78%, var(--modern-catholic-color-text));
 	--modern-catholic-overlay-header: color-mix(in srgb, var(--modern-catholic-color-accent) 32%, transparent);
-	--modern-catholic-sticky-header: rgba(75, 20, 34, 0.96);
+	--modern-catholic-sticky-header: color-mix(in srgb, var(--modern-catholic-color-accent) 82%, var(--modern-catholic-color-text));
 }
 
 body > .wp-site-blocks {
@@ -62,9 +63,19 @@ body > .wp-site-blocks {
 .wp-element-button:focus-visible,
 .wp-block-button__link:hover,
 .wp-block-button__link:focus-visible {
-	background-color: #5e172c;
+	background-color: var(--modern-catholic-color-accent-strong);
 	box-shadow: 0 0.35rem 1rem rgba(70, 20, 33, 0.2);
 	transform: translateY(-0.08rem);
+}
+
+.front-page-overlay-header + .wp-block-cover .wp-element-button {
+	color: var(--modern-catholic-color-on-accent) !important;
+	background-color: var(--modern-catholic-color-accent) !important;
+}
+
+.front-page-overlay-header + .wp-block-cover .wp-element-button:hover,
+.front-page-overlay-header + .wp-block-cover .wp-element-button:focus-visible {
+	background-color: var(--modern-catholic-color-accent-strong) !important;
 }
 
 .has-barley-background-color {

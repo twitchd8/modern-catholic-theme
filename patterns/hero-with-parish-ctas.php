@@ -20,20 +20,20 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
-<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"white","textColor":"black"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-black-color has-white-background-color has-text-color has-background wp-element-button" href="#mass-times">Mass Times</a></div>
+<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"sanctuary-burgundy","textColor":"white"} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-white-color has-sanctuary-burgundy-background-color has-text-color has-background wp-element-button" href="#mass-times">Mass Times</a></div>
 <!-- /wp:button -->
 
-<!-- wp:button {"backgroundColor":"white","textColor":"black"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-black-color has-white-background-color has-text-color has-background wp-element-button" href="#welcome">I’m New</a></div>
+<!-- wp:button {"backgroundColor":"sanctuary-burgundy","textColor":"white"} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-white-color has-sanctuary-burgundy-background-color has-text-color has-background wp-element-button" href="#welcome">I’m New</a></div>
 <!-- /wp:button -->
 
-<!-- wp:button {"backgroundColor":"white","textColor":"black"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-black-color has-white-background-color has-text-color has-background wp-element-button" href="#bulletins">Bulletin</a></div>
+<!-- wp:button {"backgroundColor":"sanctuary-burgundy","textColor":"white"} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-white-color has-sanctuary-burgundy-background-color has-text-color has-background wp-element-button" href="#bulletins">Bulletin</a></div>
 <!-- /wp:button -->
 
-<!-- wp:button {"backgroundColor":"white","textColor":"black"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-black-color has-white-background-color has-text-color has-background wp-element-button" href="#giving">Online Giving</a></div>
+<!-- wp:button {"backgroundColor":"sanctuary-burgundy","textColor":"white"} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-white-color has-sanctuary-burgundy-background-color has-text-color has-background wp-element-button" href="#giving">Online Giving</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div></div>

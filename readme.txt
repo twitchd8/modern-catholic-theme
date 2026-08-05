@@ -34,6 +34,10 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 
 == Changelog ==
 
+= 1.4.5 =
+* Matched the front-page hero actions to the standard Sanctuary Burgundy button treatment.
+* Derived hover and sticky-header shades from semantic palette variables for future style variations.
+
 = 1.4.4 =
 * Added a subtle Sanctuary Burgundy wash behind the header while it overlays the hero.
 
