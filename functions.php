@@ -46,4 +46,19 @@ function modern_catholic_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'modern_catholic_enqueue_styles' );
 
+/**
+ * Identify Single Posts that can use a featured-image header treatment.
+ *
+ * @param string[] $classes Existing body classes.
+ * @return string[]
+ */
+function modern_catholic_featured_header_body_class( $classes ) {
+	if ( is_singular( 'post' ) && has_post_thumbnail() ) {
+		$classes[] = 'modern-catholic-has-featured-image';
+	}
+
+	return $classes;
+}
+add_filter( 'body_class', 'modern_catholic_featured_header_body_class' );
+
 require_once get_theme_file_path( 'inc/parish-settings.php' );
