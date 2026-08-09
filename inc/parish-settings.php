@@ -262,17 +262,19 @@ function modern_catholic_render_parish_setting_field( $args ) {
 }
 
 /**
- * Add the theme settings screen under Appearance in the admin sidebar.
+ * Add the theme settings screen to the main admin sidebar.
  *
  * @return void
  */
 function modern_catholic_add_parish_settings_page() {
-	add_theme_page(
+	add_menu_page(
 		__( 'Modern Catholic Settings', 'modern-catholic' ),
 		__( 'Modern Catholic', 'modern-catholic' ),
 		'edit_theme_options',
 		'modern-catholic-settings',
-		'modern_catholic_render_parish_settings_page'
+		'modern_catholic_render_parish_settings_page',
+		'dashicons-admin-site-alt3',
+		61
 	);
 }
 add_action( 'admin_menu', 'modern_catholic_add_parish_settings_page' );
