@@ -16,24 +16,20 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"className":"has-white-color has-text-color","style":{"typography":{"textAlign":"center"}},"textColor":"white","fontSize":"large"} -->
-<p class="has-text-align-center has-white-color has-text-color has-large-font-size">Replace this text with a warm introduction to your parish and community.</p>
+<p class="has-text-align-center has-white-color has-text-color has-large-font-size">Whether you are visiting, returning to church, or looking for a parish home, we’re glad you are here. Replace this starter copy with the parish’s own welcome.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
-<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"white","textColor":"black"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-black-color has-white-background-color has-text-color has-background wp-element-button" href="#mass-times">Mass Times</a></div>
+<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"sanctuary-burgundy","textColor":"white"} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-white-color has-sanctuary-burgundy-background-color has-text-color has-background wp-element-button" href="#mass-times">Mass Times</a></div>
 <!-- /wp:button -->
 
-<!-- wp:button {"backgroundColor":"white","textColor":"black"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-black-color has-white-background-color has-text-color has-background wp-element-button" href="#welcome">I’m New</a></div>
+<!-- wp:button {"backgroundColor":"sanctuary-burgundy","textColor":"white"} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-white-color has-sanctuary-burgundy-background-color has-text-color has-background wp-element-button" href="#bulletins">Bulletin</a></div>
 <!-- /wp:button -->
 
-<!-- wp:button {"backgroundColor":"white","textColor":"black"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-black-color has-white-background-color has-text-color has-background wp-element-button" href="#bulletins">Bulletin</a></div>
-<!-- /wp:button -->
-
-<!-- wp:button {"backgroundColor":"white","textColor":"black"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-black-color has-white-background-color has-text-color has-background wp-element-button" href="#giving">Online Giving</a></div>
+<!-- wp:button {"backgroundColor":"sanctuary-burgundy","textColor":"white"} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-white-color has-sanctuary-burgundy-background-color has-text-color has-background wp-element-button" href="#giving">Online Giving</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div></div>

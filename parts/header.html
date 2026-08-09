@@ -1,7 +1,7 @@
 <!-- wp:group {"className":"modern-catholic-header-shell","layout":{"inherit":"true"}} -->
 <div class="wp-block-group modern-catholic-header-shell">
-	<!-- wp:group {"align":"full","className":"modern-catholic-header-bar","layout":{"type":"flex","justifyContent":"space-between"},"style":{"spacing":{"padding":{"bottom":"clamp(1rem,2vw,1.375rem)","top":"clamp(1rem,2vw,1.375rem)"}}}} -->
-	<div class="wp-block-group alignfull modern-catholic-header-bar" style="padding-bottom:clamp(1rem,2vw,1.375rem);padding-top:clamp(1rem,2vw,1.375rem)">
+	<!-- wp:group {"align":"full","className":"modern-catholic-header-bar","layout":{"type":"flex","justifyContent":"space-between"},"style":{"spacing":{"padding":{"top":"clamp(1rem,2vw,1.375rem)","right":"clamp(1rem,3vw,2.5rem)","bottom":"clamp(1rem,2vw,1.375rem)","left":"clamp(1rem,3vw,2.5rem)"}}}} -->
+	<div class="wp-block-group alignfull modern-catholic-header-bar" style="padding-top:clamp(1rem,2vw,1.375rem);padding-right:clamp(1rem,3vw,2.5rem);padding-bottom:clamp(1rem,2vw,1.375rem);padding-left:clamp(1rem,3vw,2.5rem)">
 	
 		<!-- wp:group {"layout":{"type":"flex"}} -->
 		<div class="wp-block-group">
@@ -16,7 +16,27 @@
 		</div>
 		<!-- /wp:group -->
 	
-		<!-- wp:navigation {"layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right","orientation":"horizontal"},"style":{"spacing":{"margin":{"top":"0"}}}} /-->
+		<!-- wp:group {"className":"modern-catholic-nav-cluster","layout":{"type":"flex","orientation":"vertical","justifyContent":"right"}} -->
+		<div class="wp-block-group modern-catholic-nav-cluster">
+			<!-- wp:navigation {"overlayMenu":"never","className":"modern-catholic-utility-navigation","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right","orientation":"horizontal"}} -->
+				<!-- wp:navigation-link {"label":"Bulletin","url":"/bulletins/","kind":"custom","isTopLevelLink":true} /-->
+				<!-- wp:navigation-link {"label":"Contact Us","url":"/contact-us/","kind":"custom","isTopLevelLink":true} /-->
+				<!-- wp:navigation-link {"label":"Register Here","url":"/register/","kind":"custom","isTopLevelLink":true} /-->
+			<!-- /wp:navigation -->
+
+			<!-- wp:navigation {"overlayMenu":"never","className":"modern-catholic-primary-navigation","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right","orientation":"horizontal"},"style":{"spacing":{"margin":{"top":"0"}}}} -->
+				<!-- wp:page-list /-->
+			<!-- /wp:navigation -->
+
+			<!-- wp:navigation {"className":"modern-catholic-mobile-navigation","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right","orientation":"horizontal"},"style":{"spacing":{"margin":{"top":"0"}}}} -->
+				<!-- wp:page-list /-->
+				<!-- wp:navigation-link {"label":"Bulletin","url":"/bulletins/","kind":"custom","className":"modern-catholic-mobile-utility-link modern-catholic-mobile-utility-first","isTopLevelLink":true} /-->
+				<!-- wp:navigation-link {"label":"Contact Us","url":"/contact-us/","kind":"custom","className":"modern-catholic-mobile-utility-link","isTopLevelLink":true} /-->
+				<!-- wp:navigation-link {"label":"Register Here","url":"/register/","kind":"custom","className":"modern-catholic-mobile-utility-link","isTopLevelLink":true} /-->
+				<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search","width":100,"widthUnit":"%","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true,"className":"modern-catholic-mobile-menu-search"} /-->
+			<!-- /wp:navigation -->
+		</div>
+		<!-- /wp:group -->
 	
 	</div>
 	<!-- /wp:group -->
