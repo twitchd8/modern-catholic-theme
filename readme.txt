@@ -34,6 +34,20 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 
 == Changelog ==
 
+= 1.6.0 =
+* Consolidated the parish welcome message into the front-page hero and removed the redundant welcome section and I'm New action.
+* Replaced the default theme thumbnail with a current Modern Catholic site screenshot.
+* Replaced the stock WordPress footer credit with the theme author link and editable parish copyright text.
+* Matched the footer and shared header to semantic palette variables so future palette variations can change them consistently.
+* Added MC Theme Settings as a dedicated top-level administration screen.
+* Added centralized Parish Name, Mass schedule, Reconciliation, address, telephone, and email settings with WordPress-native validation.
+* Defaulted a missing or deleted Parish Name to the current WordPress Site Title.
+* Connected reusable Mass Times blocks through the WordPress Block Bindings API.
+* Added documented shortcodes for displaying every centralized parish setting in posts, pages, templates, and widget areas.
+* Applied the palette-aware shared header globally, with a translucent treatment when it overlays the front-page hero or a Single Post featured image.
+* Extended the centered 80rem site frame and warm content surface to every theme template, Site Editor canvas, and compatible plugin-rendered page.
+* Preserved light, palette-derived Site Title and tagline contrast on standard and plugin-rendered headers.
+
 = 1.5.1 =
 * Moved Search from the fixed mobile header into the managed mobile navigation drawer.
 * Forced the hamburger treatment through the complete mobile and tablet breakpoint.
