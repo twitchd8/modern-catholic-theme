@@ -45,8 +45,26 @@ body > .wp-site-blocks {
 }
 
 /*
- * The shared header is solid burgundy by default on every template. The front
- * page overrides this below while the header is positioned over the hero.
+ * Some public plugins render a header, main, and footer directly beneath the
+ * body instead of using WordPress's .wp-site-blocks wrapper. Give those views
+ * the same centered site frame without requiring plugin-specific selectors.
+ */
+body.wp-theme-modern-catholic > :where(header, main, footer) {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: var(--modern-catholic-site-max);
+	margin-inline: auto;
+}
+
+body.wp-theme-modern-catholic > main {
+	color: var(--modern-catholic-color-text);
+	background-color: var(--modern-catholic-color-surface);
+}
+
+/*
+ * The shared header uses the active palette's structural header color by
+ * default. The front page overrides this below while the header is positioned
+ * over the hero.
  */
 .modern-catholic-header-shell {
 	color: var(--modern-catholic-color-on-accent);
@@ -57,12 +75,9 @@ body > .wp-site-blocks {
 	background: transparent !important;
 }
 
-.wp-site-blocks .modern-catholic-header-shell .wp-block-site-title,
-.wp-site-blocks .modern-catholic-header-shell .wp-block-site-title a,
-.wp-site-blocks .modern-catholic-header-shell .wp-block-site-tagline,
-.editor-styles-wrapper .modern-catholic-header-shell .wp-block-site-title,
-.editor-styles-wrapper .modern-catholic-header-shell .wp-block-site-title a,
-.editor-styles-wrapper .modern-catholic-header-shell .wp-block-site-tagline {
+.modern-catholic-header-shell .wp-block-site-title,
+.modern-catholic-header-shell .wp-block-site-title a,
+.modern-catholic-header-shell .wp-block-site-tagline {
 	color: var(--modern-catholic-color-on-accent) !important;
 	-webkit-text-fill-color: var(--modern-catholic-color-on-accent);
 }
@@ -350,6 +365,17 @@ body.admin-bar .front-page-overlay-header {
 }
 
 /* Keep the fixed treatment out of the Site Editor canvas. */
+.editor-styles-wrapper .is-root-container {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: var(--modern-catholic-site-max);
+	min-height: 100%;
+	margin-inline: auto;
+	color: var(--modern-catholic-color-text);
+	background-color: var(--modern-catholic-color-surface);
+	box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.08);
+}
+
 .editor-styles-wrapper .front-page-overlay-header {
 	position: relative;
 	top: auto;
