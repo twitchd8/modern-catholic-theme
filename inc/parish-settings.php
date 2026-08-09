@@ -23,6 +23,7 @@ const MODERN_CATHOLIC_PARISH_SETTINGS_OPTION = 'modern_catholic_parish_settings'
  */
 function modern_catholic_get_parish_settings_defaults() {
 	return array(
+		'parish_name'         => get_bloginfo( 'name' ),
 		'weekend_masses'      => "Saturday: [time]\nSunday: [times]",
 		'weekday_masses'      => 'Monday–Friday: [times]',
 		'reconciliation'      => "[day and time]\nor by appointment",
@@ -85,6 +86,7 @@ function modern_catholic_sanitize_parish_settings( $input ) {
 		$clean[ $key ] = sanitize_textarea_field( $input[ $key ] ?? $defaults[ $key ] );
 	}
 
+	$clean['parish_name']  = sanitize_text_field( $input['parish_name'] ?? '' );
 	$clean['parish_phone'] = sanitize_text_field( $input['parish_phone'] ?? '' );
 
 	$submitted_email = sanitize_text_field( $input['parish_email'] ?? '' );
@@ -124,6 +126,13 @@ function modern_catholic_register_parish_settings() {
 	);
 
 	add_settings_section(
+		'modern_catholic_identity_section',
+		__( 'Parish Identity', 'modern-catholic' ),
+		'modern_catholic_render_identity_section',
+		'modern-catholic-settings'
+	);
+
+	add_settings_section(
 		'modern_catholic_mass_times_section',
 		__( 'Mass and Reconciliation Times', 'modern-catholic' ),
 		'modern_catholic_render_mass_times_section',
@@ -138,6 +147,12 @@ function modern_catholic_register_parish_settings() {
 	);
 
 	$fields = array(
+		'parish_name' => array(
+			'label'       => __( 'Parish Name', 'modern-catholic' ),
+			'section'     => 'modern_catholic_identity_section',
+			'type'        => 'text',
+			'description' => __( 'Enter the full public name of the parish.', 'modern-catholic' ),
+		),
 		'weekend_masses' => array(
 			'label'       => __( 'Weekend Masses', 'modern-catholic' ),
 			'section'     => 'modern_catholic_mass_times_section',
@@ -207,6 +222,15 @@ function modern_catholic_register_parish_settings() {
 add_action( 'admin_init', 'modern_catholic_register_parish_settings' );
 
 /**
+ * Render the parish identity settings section description.
+ *
+ * @return void
+ */
+function modern_catholic_render_identity_section() {
+	echo '<p>' . esc_html__( 'Store the parish name here so it can be reused consistently throughout the site.', 'modern-catholic' ) . '</p>';
+}
+
+/**
  * Render the Mass Times settings section description.
  *
  * @return void
@@ -268,8 +292,8 @@ function modern_catholic_render_parish_setting_field( $args ) {
  */
 function modern_catholic_add_parish_settings_page() {
 	add_menu_page(
-		__( 'Modern Catholic Settings', 'modern-catholic' ),
-		__( 'Modern Catholic', 'modern-catholic' ),
+		__( 'MC Theme Settings', 'modern-catholic' ),
+		__( 'MC Theme Settings', 'modern-catholic' ),
 		'edit_theme_options',
 		'modern-catholic-settings',
 		'modern_catholic_render_parish_settings_page',
@@ -290,7 +314,7 @@ function modern_catholic_render_parish_settings_page() {
 	}
 	?>
 	<div class="wrap">
-		<h1><?php esc_html_e( 'Modern Catholic Settings', 'modern-catholic' ); ?></h1>
+		<h1><?php esc_html_e( 'MC Theme Settings', 'modern-catholic' ); ?></h1>
 		<p><?php esc_html_e( 'Manage parish information that should remain consistent everywhere the theme displays it.', 'modern-catholic' ); ?></p>
 		<p class="description"><?php esc_html_e( 'Mass Times are already connected to these settings. Contact values are stored centrally and ready for bound contact sections.', 'modern-catholic' ); ?></p>
 		<?php settings_errors(); ?>
@@ -301,6 +325,7 @@ function modern_catholic_render_parish_settings_page() {
 			submit_button( __( 'Save Parish Settings', 'modern-catholic' ) );
 			?>
 		</form>
+		<?php modern_catholic_render_shortcode_reference(); ?>
 	</div>
 	<?php
 }
@@ -345,3 +370,105 @@ function modern_catholic_register_parish_settings_binding_source() {
 	);
 }
 add_action( 'init', 'modern_catholic_register_parish_settings_binding_source' );
+
+/**
+ * Return the shortcodes that expose parish settings.
+ *
+ * @return array<string, array<string, string>>
+ */
+function modern_catholic_get_parish_setting_shortcodes() {
+	return array(
+		'mc_parish_name' => array(
+			'key'         => 'parish_name',
+			'description' => __( 'Displays the parish name.', 'modern-catholic' ),
+		),
+		'mc_weekend_masses' => array(
+			'key'         => 'weekend_masses',
+			'description' => __( 'Displays the weekend Mass schedule.', 'modern-catholic' ),
+		),
+		'mc_weekday_masses' => array(
+			'key'         => 'weekday_masses',
+			'description' => __( 'Displays the weekday Mass schedule.', 'modern-catholic' ),
+		),
+		'mc_reconciliation' => array(
+			'key'         => 'reconciliation',
+			'description' => __( 'Displays Reconciliation times and appointment guidance.', 'modern-catholic' ),
+		),
+		'mc_parish_address' => array(
+			'key'         => 'parish_address',
+			'description' => __( 'Displays the main parish address.', 'modern-catholic' ),
+		),
+		'mc_office_address' => array(
+			'key'         => 'office_address',
+			'description' => __( 'Displays the office address, or the parish address when the office address is blank.', 'modern-catholic' ),
+		),
+		'mc_parish_phone' => array(
+			'key'         => 'parish_phone',
+			'description' => __( 'Displays the parish phone number.', 'modern-catholic' ),
+		),
+		'mc_parish_email' => array(
+			'key'         => 'parish_email',
+			'description' => __( 'Displays the parish email address.', 'modern-catholic' ),
+		),
+	);
+}
+
+/**
+ * Render a parish setting shortcode.
+ *
+ * @param array|string $attributes Shortcode attributes. Not currently used.
+ * @param string|null  $content    Enclosed content. Not currently used.
+ * @param string       $tag        Shortcode tag.
+ * @return string
+ */
+function modern_catholic_render_parish_setting_shortcode( $attributes = array(), $content = null, $tag = '' ) {
+	unset( $attributes, $content );
+
+	$shortcodes = modern_catholic_get_parish_setting_shortcodes();
+
+	if ( ! isset( $shortcodes[ $tag ] ) ) {
+		return '';
+	}
+
+	return nl2br( esc_html( modern_catholic_get_parish_setting( $shortcodes[ $tag ]['key'] ) ) );
+}
+
+/**
+ * Register parish setting shortcodes.
+ *
+ * @return void
+ */
+function modern_catholic_register_parish_setting_shortcodes() {
+	foreach ( array_keys( modern_catholic_get_parish_setting_shortcodes() ) as $tag ) {
+		add_shortcode( $tag, 'modern_catholic_render_parish_setting_shortcode' );
+	}
+}
+add_action( 'init', 'modern_catholic_register_parish_setting_shortcodes' );
+
+/**
+ * Render the shortcode instructions on the settings screen.
+ *
+ * @return void
+ */
+function modern_catholic_render_shortcode_reference() {
+	?>
+	<h2><?php esc_html_e( 'Shortcode Reference', 'modern-catholic' ); ?></h2>
+	<p><?php esc_html_e( 'Add a Shortcode block to a page, post, template, or widget area, then paste the shortcode for the value you want to display. Each shortcode always uses the latest value saved above.', 'modern-catholic' ); ?></p>
+	<table class="widefat striped">
+		<thead>
+			<tr>
+				<th scope="col"><?php esc_html_e( 'Shortcode', 'modern-catholic' ); ?></th>
+				<th scope="col"><?php esc_html_e( 'What it displays', 'modern-catholic' ); ?></th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php foreach ( modern_catholic_get_parish_setting_shortcodes() as $tag => $shortcode ) : ?>
+				<tr>
+					<td><code>[<?php echo esc_html( $tag ); ?>]</code></td>
+					<td><?php echo esc_html( $shortcode['description'] ); ?></td>
+				</tr>
+			<?php endforeach; ?>
+		</tbody>
+	</table>
+	<?php
+}
