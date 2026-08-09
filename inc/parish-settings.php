@@ -359,6 +359,15 @@ function modern_catholic_get_parish_setting_binding_value( $source_args, $block_
 	$defaults = modern_catholic_get_parish_settings_defaults();
 	$key      = sanitize_key( $source_args['key'] );
 
+	if ( 'parish_copyright' === $key ) {
+		return sprintf(
+			/* translators: 1: current year, 2: parish name. */
+			esc_html__( '© %1$s — %2$s', 'modern-catholic' ),
+			esc_html( wp_date( 'Y' ) ),
+			esc_html( modern_catholic_get_parish_setting( 'parish_name' ) )
+		);
+	}
+
 	if ( ! array_key_exists( $key, $defaults ) ) {
 		return null;
 	}

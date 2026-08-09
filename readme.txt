@@ -34,6 +34,9 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 
 == Changelog ==
 
+= 1.6.1 =
+* Replaced the footer Parish Name placeholder with a Block Binding that displays the current year and centralized Parish Name setting.
+
 = 1.6.0 =
 * Consolidated the parish welcome message into the front-page hero and removed the redundant welcome section and I'm New action.
 * Replaced the default theme thumbnail with a current Modern Catholic site screenshot.
