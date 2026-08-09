@@ -52,7 +52,8 @@ function modern_catholic_get_parish_settings() {
 /**
  * Return one parish setting.
  *
- * When a separate office address is not supplied, the parish address is used.
+ * When the parish name is blank, the WordPress Site Title is used. When a
+ * separate office address is not supplied, the parish address is used.
  *
  * @param string $key Setting key.
  * @return string
@@ -62,6 +63,10 @@ function modern_catholic_get_parish_setting( $key ) {
 
 	if ( ! array_key_exists( $key, $settings ) ) {
 		return '';
+	}
+
+	if ( 'parish_name' === $key && '' === trim( $settings[ $key ] ) ) {
+		return get_bloginfo( 'name' );
 	}
 
 	if ( 'office_address' === $key && '' === trim( $settings[ $key ] ) ) {
@@ -86,7 +91,13 @@ function modern_catholic_sanitize_parish_settings( $input ) {
 		$clean[ $key ] = sanitize_textarea_field( $input[ $key ] ?? $defaults[ $key ] );
 	}
 
-	$clean['parish_name']  = sanitize_text_field( $input['parish_name'] ?? '' );
+	$parish_name = sanitize_text_field( $input['parish_name'] ?? '' );
+
+	if ( '' === $parish_name ) {
+		$parish_name = sanitize_text_field( get_bloginfo( 'name' ) );
+	}
+
+	$clean['parish_name']  = $parish_name;
 	$clean['parish_phone'] = sanitize_text_field( $input['parish_phone'] ?? '' );
 
 	$submitted_email = sanitize_text_field( $input['parish_email'] ?? '' );
@@ -259,7 +270,7 @@ function modern_catholic_render_parish_setting_field( $args ) {
 	$key         = $args['key'];
 	$field_id    = 'modern-catholic-' . $key;
 	$field_name  = MODERN_CATHOLIC_PARISH_SETTINGS_OPTION . '[' . $key . ']';
-	$value       = $settings[ $key ];
+	$value       = 'parish_name' === $key ? modern_catholic_get_parish_setting( $key ) : $settings[ $key ];
 	$description = $args['description'] ?? '';
 
 	if ( 'textarea' === $args['type'] ) {
