@@ -107,12 +107,11 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 == Copyright ==
 
 Modern Catholic WordPress Theme, (C) 2026 Andrew T. Schmitt
-Modern Catholic is distributed under the terms of the GNU GPL.
+Modern Catholic is distributed under GNU GPL version 3.0 only.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or
-(at your option) any later version.
+the Free Software Foundation, version 3 of the License only.
 
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
