@@ -4,8 +4,8 @@ Contributors: Andrew T. Schmitt
 Requires at least: 7.0
 Tested up to: 7.0
 Requires PHP: 7.4
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPLv3
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 
 == Description ==
@@ -33,6 +33,9 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 
 
 == Changelog ==
+
+= 1.6.1 =
+* Replaced the footer Parish Name placeholder with a Block Binding that displays the current year and centralized Parish Name setting.
 
 = 1.6.0 =
 * Consolidated the parish welcome message into the front-page hero and removed the redundant welcome section and I'm New action.
