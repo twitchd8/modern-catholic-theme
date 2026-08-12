@@ -34,6 +34,10 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 
 == Changelog ==
 
+= 1.6.2 =
+* Added the canonical Modern Catholic theme repository URL to the theme metadata.
+* Standardized the theme metadata, documentation, and bundled license on GNU GPL version 3.0 only.
+
 = 1.6.1 =
 * Replaced the footer Parish Name placeholder with a Block Binding that displays the current year and centralized Parish Name setting.
 
