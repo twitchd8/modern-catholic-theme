@@ -10,8 +10,8 @@
 <!-- wp:query {"query":{"perPage":9,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"align":"wide","className":"church-post-card-grid"} -->
 <div class="wp-block-query alignwide church-post-card-grid">
 	<!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
-		<!-- wp:group {"className":"church-post-card","style":{"border":{"color":"currentColor","width":"1px","radius":"0.75rem"},"spacing":{"blockGap":"0","padding":{"bottom":"var:preset|spacing|40"}}},"layout":{"type":"constrained"}} -->
-		<div class="wp-block-group church-post-card has-border-color" style="border-color:currentColor;border-width:1px;border-radius:0.75rem;padding-bottom:var(--wp--preset--spacing--40)">
+		<!-- wp:group {"borderColor":"border-subtle","className":"church-post-card","style":{"border":{"width":"1px","radius":"0.75rem"},"spacing":{"blockGap":"0","padding":{"bottom":"var:preset|spacing|40"}}},"layout":{"type":"constrained"}} -->
+		<div class="wp-block-group church-post-card has-border-color has-border-subtle-border-color" style="border-width:1px;border-radius:0.75rem;padding-bottom:var(--wp--preset--spacing--40)">
 			<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9","style":{"border":{"radius":{"topLeft":"0.75rem","topRight":"0.75rem"}}}} /-->
 			<!-- wp:group {"style":{"spacing":{"padding":{"right":"var:preset|spacing|40","left":"var:preset|spacing|40","top":"var:preset|spacing|30"}}},"layout":{"type":"constrained"}} -->
 			<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
