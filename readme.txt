@@ -35,7 +35,7 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 
 == Changelog ==
 
-= Unreleased =
+= 1.6.3 =
 * Bundled the default paper texture with the theme so it remains available on fresh installations and in manually uploaded release packages.
 * Added a native `theme.json` outer-background default that remains overridable through WordPress Global Styles.
 * Removed the Today’s Readings template part and front-page placement so plugin-related visuals remain owned by the Today’s Readings plugin.
