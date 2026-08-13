@@ -65,6 +65,14 @@
 		"useRootPaddingAwareAlignments": true
 	},
 	"styles": {
+		"background": {
+			"backgroundImage": {
+				"url": "file:./assets/images/textured-paper.png"
+			},
+			"backgroundPosition": "50% 0",
+			"backgroundRepeat": "repeat",
+			"backgroundSize": "auto"
+		},
 		"color": {
 			"background": "var:preset|color|almandine",
 			"text": "var:preset|color|black"
