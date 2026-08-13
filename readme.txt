@@ -23,6 +23,7 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 * Frames the entire site in a fluid, centered shell with an 80rem maximum width.
 * Keeps full-width blocks, including the front-page hero, inside that shared site shell.
 * Uses a warm off-white site surface while preserving Global Styles background textures in the outer margins.
+* Bundles a subtle paper texture as the portable outer-background default while allowing Global Styles to replace or remove it.
 * Provides a semantic WordPress color system for canvas, surfaces, foreground text, borders, three tonal color scales, and accessible contrast colors.
 * Includes the photo-inspired Sanctuary default plus Marian Blue, Cloister Green, and Advent Violet style variations.
 * Allows standard and custom block colors to override theme defaults, including navigation submenu and mobile-overlay colors.
@@ -55,6 +56,11 @@ Colors selected directly on a block remain more specific than theme defaults. Na
 * Added conditional color defaults that apply only when a block has no editor-selected text or background color.
 * Migrated theme-supplied patterns and template parts to semantic palette slugs.
 * Added dynamic compatibility aliases for content created with the former Almandine, Barley, Mountain Moss, Sanctuary Burgundy, Ink, and White slugs.
+
+= 1.6.3 =
+* Bundled the default paper texture with the theme so it remains available on fresh installations and in manually uploaded release packages.
+* Added a native `theme.json` outer-background default that remains overridable through WordPress Global Styles.
+* Removed the Today’s Readings template part and front-page placement so plugin-related visuals remain owned by the Today’s Readings plugin.
 
 = 1.6.2 =
 * Added the canonical Modern Catholic theme repository URL to the theme metadata.
@@ -134,6 +140,8 @@ Colors selected directly on a block remain more specific than theme defaults. Na
 
 Modern Catholic WordPress Theme, (C) 2026 Andrew T. Schmitt
 Modern Catholic is distributed under GNU GPL version 3.0 only.
+
+The bundled `assets/images/textured-paper.png` theme asset is distributed under the same GNU GPL version 3.0-only license.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

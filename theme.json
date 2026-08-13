@@ -165,6 +165,14 @@
 		"useRootPaddingAwareAlignments": true
 	},
 	"styles": {
+		"background": {
+			"backgroundImage": {
+				"url": "file:./assets/images/textured-paper.png"
+			},
+			"backgroundPosition": "50% 0",
+			"backgroundRepeat": "repeat",
+			"backgroundSize": "auto"
+		},
 		"color": {
 			"background": "var:preset|color|canvas",
 			"text": "var:preset|color|foreground"
@@ -202,11 +210,6 @@
 		{
 			"area": "footer",
 			"name": "footer"
-		},
-		{
-			"area": "uncategorized",
-			"name": "todays-readings",
-			"title": "Today’s Readings"
 		},
 		{
 			"area": "uncategorized",
