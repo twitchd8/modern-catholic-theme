@@ -1,0 +1,37 @@
+{
+	"$schema": "https://schemas.wp.org/wp/7.0/theme.json",
+	"version": 3,
+	"title": "Advent Violet",
+	"settings": {
+		"color": {
+			"palette": [
+				{ "color": "#ebe5ed", "name": "Canvas", "slug": "canvas" },
+				{ "color": "#f8f3ea", "name": "Surface", "slug": "surface" },
+				{ "color": "#e5d9e8", "name": "Alternate Surface", "slug": "surface-alt" },
+				{ "color": "#29232d", "name": "Foreground", "slug": "foreground" },
+				{ "color": "#665c69", "name": "Muted Text", "slug": "text-muted" },
+				{ "color": "#bcaebe", "name": "Border", "slug": "border-subtle" },
+				{ "color": "#eee5f2", "name": "Primary 100", "slug": "primary-100" },
+				{ "color": "#b79ac3", "name": "Primary 300", "slug": "primary-300" },
+				{ "color": "#654477", "name": "Primary", "slug": "primary" },
+				{ "color": "#4d335c", "name": "Primary 700", "slug": "primary-700" },
+				{ "color": "#2e1f38", "name": "Primary 900", "slug": "primary-900" },
+				{ "color": "#f5e3e8", "name": "Secondary 100", "slug": "secondary-100" },
+				{ "color": "#cc8799", "name": "Secondary 300", "slug": "secondary-300" },
+				{ "color": "#8c354e", "name": "Secondary", "slug": "secondary" },
+				{ "color": "#68263a", "name": "Secondary 700", "slug": "secondary-700" },
+				{ "color": "#3d1622", "name": "Secondary 900", "slug": "secondary-900" },
+				{ "color": "#f7efd8", "name": "Accent 100", "slug": "accent-100" },
+				{ "color": "#dec67f", "name": "Accent 300", "slug": "accent-300" },
+				{ "color": "#a17b28", "name": "Accent", "slug": "accent" },
+				{ "color": "#72571c", "name": "Accent 700", "slug": "accent-700" },
+				{ "color": "#43330f", "name": "Accent 900", "slug": "accent-900" },
+				{ "color": "#fffaf0", "name": "On Primary", "slug": "on-primary" },
+				{ "color": "#fffaf0", "name": "On Secondary", "slug": "on-secondary" },
+				{ "color": "#0f0d09", "name": "On Accent", "slug": "on-accent" },
+				{ "color": "#ffffff", "name": "On Image", "slug": "on-image" },
+				{ "color": "#1d1721", "name": "Image Scrim", "slug": "scrim" }
+			]
+		}
+	}
+}

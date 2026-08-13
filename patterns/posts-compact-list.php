@@ -10,8 +10,8 @@
 <!-- wp:query {"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"align":"wide","className":"church-post-list"} -->
 <div class="wp-block-query alignwide church-post-list">
 	<!-- wp:post-template -->
-		<!-- wp:group {"style":{"border":{"bottom":{"color":"var:preset|color|contrast-2","width":"1px"}},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
-		<div class="wp-block-group" style="border-bottom-color:var(--wp--preset--color--contrast-2);border-bottom-width:1px;padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40)">
+		<!-- wp:group {"style":{"border":{"bottom":{"color":"var:preset|color|border-subtle","width":"1px"}},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
+		<div class="wp-block-group" style="border-bottom-color:var(--wp--preset--color--border-subtle);border-bottom-width:1px;padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40)">
 			<!-- wp:post-title {"isLink":true,"level":2} /-->
 			<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap"},"fontSize":"small"} -->
 			<div class="wp-block-group has-small-font-size">

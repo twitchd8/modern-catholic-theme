@@ -23,8 +23,10 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 * Frames the entire site in a fluid, centered shell with an 80rem maximum width.
 * Keeps full-width blocks, including the front-page hero, inside that shared site shell.
 * Uses a warm off-white site surface while preserving Global Styles background textures in the outer margins.
-* Provides one native WordPress palette with Almandine Ivory, Barley Gold, Mountain Moss, Sanctuary Burgundy, Ink, and White.
-* Maps theme surfaces, text, links, buttons, and structural accents to reusable palette variables.
+* Provides a semantic WordPress color system for canvas, surfaces, foreground text, borders, three tonal color scales, and accessible contrast colors.
+* Includes the photo-inspired Sanctuary default plus Marian Blue, Cloister Green, and Advent Violet style variations.
+* Allows standard and custom block colors to override theme defaults, including navigation submenu and mobile-overlay colors.
+* Maps theme surfaces, text, links, buttons, shadows, overlays, and structural accents to reusable palette variables.
 * Includes reusable header and footer template parts.
 * Uses the responsive Navigation block, including its built-in mobile overlay behavior.
 * Overlays the front-page header on the hero and converts it to a readable sticky bar after the hero scrolls away.
@@ -32,7 +34,27 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 * Uses native block responsiveness and a small dependency-free front-page script for the sticky-header transition.
 
 
+== Choosing a Color Palette ==
+
+1. Open Appearance > Editor.
+2. Open Styles, then Browse styles.
+3. Choose Default for the Sanctuary palette, or select Marian Blue, Cloister Green, or Advent Violet.
+4. Save the Global Styles change.
+
+Colors selected directly on a block remain more specific than theme defaults. Navigation's Text, Background, Submenu & overlay text, and Submenu & overlay background controls can therefore be adjusted independently after choosing a palette.
+
+
 == Changelog ==
+
+= 1.7.0 =
+* Replaced fixed color names with semantic Canvas, Surface, Foreground, Border, Primary, Secondary, Accent, and contrast roles.
+* Added 100, 300, base, 700, and 900 tonal steps for the Primary, Secondary, and Accent color families.
+* Added Marian Blue, Cloister Green, and Advent Violet WordPress style variations alongside the Sanctuary default.
+* Enabled custom colors in the WordPress color picker.
+* Removed forced navigation, submenu, mobile-overlay, title, footer, and button colors that overrode Site Editor choices.
+* Added conditional color defaults that apply only when a block has no editor-selected text or background color.
+* Migrated theme-supplied patterns and template parts to semantic palette slugs.
+* Added dynamic compatibility aliases for content created with the former Almandine, Barley, Mountain Moss, Sanctuary Burgundy, Ink, and White slugs.
 
 = 1.6.2 =
 * Added the canonical Modern Catholic theme repository URL to the theme metadata.
