@@ -23,6 +23,7 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 * Frames the entire site in a fluid, centered shell with an 80rem maximum width.
 * Keeps full-width blocks, including the front-page hero, inside that shared site shell.
 * Uses a warm off-white site surface while preserving Global Styles background textures in the outer margins.
+* Bundles a subtle paper texture as the portable outer-background default while allowing Global Styles to replace or remove it.
 * Provides one native WordPress palette with Almandine Ivory, Barley Gold, Mountain Moss, Sanctuary Burgundy, Ink, and White.
 * Maps theme surfaces, text, links, buttons, and structural accents to reusable palette variables.
 * Includes reusable header and footer template parts.
@@ -33,6 +34,11 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 
 
 == Changelog ==
+
+= 1.6.3 =
+* Bundled the default paper texture with the theme so it remains available on fresh installations and in manually uploaded release packages.
+* Added a native `theme.json` outer-background default that remains overridable through WordPress Global Styles.
+* Removed the Today’s Readings template part and front-page placement so plugin-related visuals remain owned by the Today’s Readings plugin.
 
 = 1.6.2 =
 * Added the canonical Modern Catholic theme repository URL to the theme metadata.
@@ -112,6 +118,8 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 
 Modern Catholic WordPress Theme, (C) 2026 Andrew T. Schmitt
 Modern Catholic is distributed under GNU GPL version 3.0 only.
+
+The bundled `assets/images/textured-paper.png` theme asset is distributed under the same GNU GPL version 3.0-only license.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
