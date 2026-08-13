@@ -113,11 +113,6 @@
 		},
 		{
 			"area": "uncategorized",
-			"name": "todays-readings",
-			"title": "Today’s Readings"
-		},
-		{
-			"area": "uncategorized",
 			"name": "parish-mass-times",
 			"title": "Parish Mass Times"
 		},
