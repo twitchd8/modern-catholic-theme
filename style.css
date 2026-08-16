@@ -88,12 +88,9 @@ body.wp-theme-modern-catholic > main {
 }
 
 .modern-catholic-utility-navigation {
-	padding: 0.45rem 0.75rem;
 	border-radius: 0.2rem;
-	font-size: 0.75rem;
-	font-weight: 700;
 	letter-spacing: 0.045em;
-	line-height: 1.25;
+	line-height: 1.0;
 	text-transform: uppercase;
 }
 
