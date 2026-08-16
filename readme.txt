@@ -47,6 +47,21 @@ Colors selected directly on a block remain more specific than theme defaults. Na
 
 == Changelog ==
 
+= 1.8.0 =
+* Condensed and reorganized the theme stylesheet by removing WordPress-core duplicates, unused aliases, and redundant responsive rules.
+* Replaced intermediate base-color aliases with direct semantic WordPress preset references while retaining derived overlay and shadow tokens.
+* Corrected the mobile popover fallback so it uses palette-aware Surface and Foreground colors instead of WordPress's fixed white and black defaults.
+* Added a native Stacked (No Overlay) block style for the front-page Header template part.
+* Kept the stacked and overlay treatments connected to the same shared header and WordPress Navigation content.
+* Made the stacked header use the active palette's semantic header color without the overlay blur or title shadow.
+* Moved the desktop-to-mobile navigation handoff earlier so the header switches to its hamburger before menus wrap.
+* Ordered the portable mobile popover as Primary Navigation, Quick Links, then Search, with accessible menu labels.
+* Disabled custom hex, gradient, and duotone choices so Site Editor designs use palette-aware semantic color swatches.
+* Synchronized theme-owned Site Editor refinements for header typography and navigation sizing.
+* Preserved the front-page hero's explicitly selected overlay color in portable theme source.
+* Improved the heading hierarchy and schedule readability in the Mass Times and Parish Life template parts.
+* Kept plugin-registered templates outside the theme source and release package.
+
 = 1.7.0 =
 * Replaced fixed color names with semantic Canvas, Surface, Foreground, Border, Primary, Secondary, Accent, and contrast roles.
 * Added 100, 300, base, 700, and 900 tonal steps for the Primary, Secondary, and Accent color families.

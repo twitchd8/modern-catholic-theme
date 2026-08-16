@@ -7,7 +7,11 @@
 	const header = document.querySelector( '.front-page-overlay-header' );
 	const hero = header?.nextElementSibling;
 
-	if ( ! header || ! hero ) {
+	if (
+		! header ||
+		! hero ||
+		header.classList.contains( 'is-style-modern-catholic-stacked-header' )
+	) {
 		return;
 	}
 

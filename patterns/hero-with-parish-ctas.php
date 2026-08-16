@@ -5,7 +5,7 @@
  * Categories: featured, call-to-action
  */
 ?>
-<!-- wp:cover {"url":"<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/generic-parish-hero-placeholder.png","alt":"Generic parish church placeholder","dimRatio":70,"overlayColor":"scrim","minHeight":640,"minHeightUnit":"px","contentPosition":"center center","align":"full"} -->
+<!-- wp:cover {"url":"<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/generic-parish-hero-placeholder.png","alt":"Generic parish church placeholder","dimRatio":70,"overlayColor":"scrim","isUserOverlayColor":true,"minHeight":640,"minHeightUnit":"px","contentPosition":"center center","align":"full"} -->
 <div class="wp-block-cover alignfull" style="min-height:640px"><img class="wp-block-cover__image-background" alt="Generic parish church placeholder" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/generic-parish-hero-placeholder.png" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-scrim-background-color has-background-dim-70 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:group {"layout":{"type":"constrained","contentSize":"58rem"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"textAlign":"center"}},"textColor":"on-image","fontSize":"medium"} -->
 <p class="has-text-align-center has-on-image-color has-text-color has-medium-font-size">A welcoming Catholic parish community</p>

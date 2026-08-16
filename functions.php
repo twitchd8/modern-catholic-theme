@@ -17,6 +17,22 @@ function modern_catholic_setup() {
 add_action( 'after_setup_theme', 'modern_catholic_setup' );
 
 /**
+ * Register optional presentation styles for theme template parts.
+ *
+ * @return void
+ */
+function modern_catholic_register_block_styles() {
+	register_block_style(
+		'core/template-part',
+		array(
+			'name'  => 'modern-catholic-stacked-header',
+			'label' => __( 'Stacked (No Overlay)', 'modern-catholic' ),
+		)
+	);
+}
+add_action( 'init', 'modern_catholic_register_block_styles' );
+
+/**
  * Enqueue the theme stylesheet on the front end.
  *
  * @return void

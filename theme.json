@@ -4,7 +4,11 @@
 	"settings": {
 		"appearanceTools": true,
 		"color": {
-			"custom": true,
+			"custom": false,
+			"customDuotone": false,
+			"customGradient": false,
+			"defaultDuotone": false,
+			"defaultGradients": false,
 			"defaultPalette": false,
 			"palette": [
 				{
