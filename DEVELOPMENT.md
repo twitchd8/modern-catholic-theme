@@ -55,6 +55,8 @@ Every file in `styles` must define the complete slug set. Keep normal text/backg
 
 Block and Global Styles choices are authoritative. Theme CSS may provide a default only when the relevant block does not carry WordPress's `has-text-color` or `has-background` class. Do not use `!important` for color or background declarations. Layout-only `!important` declarations may be retained where required to control responsive Navigation visibility.
 
-The theme intentionally disables custom colors, gradients, and duotones in the Site Editor. Reusable designs must select semantic theme swatches rather than literal color values so changing the active style variation updates those designs automatically. Add new visual schemes by redefining the complete semantic slug set, not by adding palette-specific selectors to `style.css`.
+The theme intentionally disables arbitrary custom colors, gradients, and duotones in the Site Editor. It provides named semantic presets for all three. Reusable designs must select those theme presets rather than literal color values so changing the active style variation updates those designs automatically. Every style variation must redefine the complete color, gradient, and duotone slug sets; do not add palette-specific selectors to `style.css`.
+
+Gradient presets: `quiet-surface`, `primary-depth`, `sacred-contrast`, and `gilded-accent`. Duotone presets: `primary-wash`, `primary-gold`, `secondary-wash`, and `ink-parchment`.
 
 The legacy Almandine, Barley, Mountain Moss, Sanctuary Burgundy, Ink, and White utility classes are compatibility aliases only. New theme markup must use semantic slugs.

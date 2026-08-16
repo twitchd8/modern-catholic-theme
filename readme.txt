@@ -26,8 +26,9 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 * Bundles a subtle paper texture as the portable outer-background default while allowing Global Styles to replace or remove it.
 * Provides a semantic WordPress color system for canvas, surfaces, foreground text, borders, three tonal color scales, and accessible contrast colors.
 * Includes the photo-inspired Sanctuary default plus Marian Blue, Cloister Green, and Advent Violet style variations.
-* Allows standard and custom block colors to override theme defaults, including navigation submenu and mobile-overlay colors.
+* Allows editor-selected semantic presets to override theme defaults, including navigation submenu and mobile-overlay colors.
 * Maps theme surfaces, text, links, buttons, shadows, overlays, and structural accents to reusable palette variables.
+* Provides four palette-aware gradients and four palette-aware photographic duotones in every included color scheme.
 * Includes reusable header and footer template parts.
 * Uses the responsive Navigation block, including its built-in mobile overlay behavior.
 * Overlays the front-page header on the hero and converts it to a readable sticky bar after the hero scrolls away.
@@ -57,6 +58,7 @@ Colors selected directly on a block remain more specific than theme defaults. Na
 * Moved the desktop-to-mobile navigation handoff earlier so the header switches to its hamburger before menus wrap.
 * Ordered the portable mobile popover as Primary Navigation, Quick Links, then Search, with accessible menu labels.
 * Disabled custom hex, gradient, and duotone choices so Site Editor designs use palette-aware semantic color swatches.
+* Added named semantic gradient and duotone presets to every palette while keeping arbitrary custom values disabled.
 * Synchronized theme-owned Site Editor refinements for header typography and navigation sizing.
 * Preserved the front-page hero's explicitly selected overlay color in portable theme source.
 * Improved the heading hierarchy and schedule readability in the Mass Times and Parish Life template parts.
