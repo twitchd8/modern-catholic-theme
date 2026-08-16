@@ -31,6 +31,18 @@
 				{ "color": "#0f0d09", "name": "On Accent", "slug": "on-accent" },
 				{ "color": "#ffffff", "name": "On Image", "slug": "on-image" },
 				{ "color": "#1d1721", "name": "Image Scrim", "slug": "scrim" }
+			],
+			"gradients": [
+				{ "gradient": "linear-gradient(135deg, #f8f3ea 0%, #e5d9e8 100%)", "name": "Quiet Surface", "slug": "quiet-surface" },
+				{ "gradient": "linear-gradient(135deg, #2e1f38 0%, #654477 100%)", "name": "Primary Depth", "slug": "primary-depth" },
+				{ "gradient": "linear-gradient(135deg, #4d335c 0%, #8c354e 100%)", "name": "Sacred Contrast", "slug": "sacred-contrast" },
+				{ "gradient": "linear-gradient(135deg, #f7efd8 0%, #a17b28 100%)", "name": "Gilded Accent", "slug": "gilded-accent" }
+			],
+			"duotone": [
+				{ "colors": ["#2e1f38", "#eee5f2"], "name": "Primary Wash", "slug": "primary-wash" },
+				{ "colors": ["#2e1f38", "#dec67f"], "name": "Primary and Gold", "slug": "primary-gold" },
+				{ "colors": ["#3d1622", "#f5e3e8"], "name": "Secondary Wash", "slug": "secondary-wash" },
+				{ "colors": ["#29232d", "#f8f3ea"], "name": "Ink and Parchment", "slug": "ink-parchment" }
 			]
 		}
 	}

@@ -26,8 +26,9 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 * Bundles a subtle paper texture as the portable outer-background default while allowing Global Styles to replace or remove it.
 * Provides a semantic WordPress color system for canvas, surfaces, foreground text, borders, three tonal color scales, and accessible contrast colors.
 * Includes the photo-inspired Sanctuary default plus Marian Blue, Cloister Green, and Advent Violet style variations.
-* Allows standard and custom block colors to override theme defaults, including navigation submenu and mobile-overlay colors.
+* Allows editor-selected semantic presets to override theme defaults, including navigation submenu and mobile-overlay colors.
 * Maps theme surfaces, text, links, buttons, shadows, overlays, and structural accents to reusable palette variables.
+* Provides four palette-aware gradients and four palette-aware photographic duotones in every included color scheme.
 * Includes reusable header and footer template parts.
 * Uses the responsive Navigation block, including its built-in mobile overlay behavior.
 * Overlays the front-page header on the hero and converts it to a readable sticky bar after the hero scrolls away.
@@ -44,8 +45,35 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 
 Colors selected directly on a block remain more specific than theme defaults. Navigation's Text, Background, Submenu & overlay text, and Submenu & overlay background controls can therefore be adjusted independently after choosing a palette.
 
+== Creating a Mega Menu ==
+
+1. In the Site Editor, make the desired top-level Navigation item a Submenu.
+2. Add two or three Submenu blocks directly inside it. Their labels become the column headings.
+3. Add the destination links inside each column Submenu.
+4. Select the outer Submenu and choose Mega Menu — 2 Columns or Mega Menu — 3 Columns from the block's Styles panel.
+
+Mega-menu columns are displayed side by side on desktop and return to normal stacked nested navigation in the mobile drawer.
+
 
 == Changelog ==
+
+= 1.8.0 =
+* Condensed and reorganized the theme stylesheet by removing WordPress-core duplicates, unused aliases, and redundant responsive rules.
+* Replaced intermediate base-color aliases with direct semantic WordPress preset references while retaining derived overlay and shadow tokens.
+* Corrected the mobile popover fallback so it uses palette-aware Surface and Foreground colors instead of WordPress's fixed white and black defaults.
+* Added a native Stacked (No Overlay) block style for the front-page Header template part.
+* Kept the stacked and overlay treatments connected to the same shared header and WordPress Navigation content.
+* Made the stacked header use the active palette's semantic header color without the overlay blur or title shadow.
+* Moved the desktop-to-mobile navigation handoff earlier so the header switches to its hamburger before menus wrap.
+* Ordered the portable mobile popover as Primary Navigation, Quick Links, then Search, with accessible menu labels.
+* Consolidated desktop and mobile navigation onto one canonical WordPress Navigation record while retaining distinct desktop Primary and Quick Links views.
+* Added native two-column and three-column Mega Menu styles for nested Submenu blocks, with palette-aware desktop panels and stacked mobile navigation.
+* Disabled custom hex, gradient, and duotone choices so Site Editor designs use palette-aware semantic color swatches.
+* Added named semantic gradient and duotone presets to every palette while keeping arbitrary custom values disabled.
+* Synchronized theme-owned Site Editor refinements for header typography and navigation sizing.
+* Preserved the front-page hero's explicitly selected overlay color in portable theme source.
+* Improved the heading hierarchy and schedule readability in the Mass Times and Parish Life template parts.
+* Kept plugin-registered templates outside the theme source and release package.
 
 = 1.7.0 =
 * Replaced fixed color names with semantic Canvas, Surface, Foreground, Border, Primary, Secondary, Accent, and contrast roles.

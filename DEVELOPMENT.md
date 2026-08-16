@@ -35,8 +35,9 @@ A tag identifies an exact historical commit. Do not move or reuse an existing re
 WordPress Navigation records and saved template-part overrides live in the site database, not in the theme repository.
 
 - Site Editor changes do not update theme files automatically. Deliberately synchronize reusable changes into the repository or export them with Create Block Theme.
-- ATS-WP-DEV currently uses separately managed Primary, Utility, and Mobile Navigation records.
-- The active saved Header template part references those records.
+- ATS-WP-DEV uses one canonical Main Navigation record. The active saved Header template part references it from the desktop Primary, desktop Quick Links, and Mobile Navigation views.
+- Add `modern-catholic-menu-utility` to Quick Links and `modern-catholic-menu-utility-first` to the first Quick Link. Add `modern-catholic-menu-mobile-only` to blocks, such as Search, that belong only in the mobile drawer.
+- Apply the registered Mega Menu — 2 Columns or Mega Menu — 3 Columns style to an outer Submenu whose direct children are the column Submenus. Mega menus stack as ordinary nested navigation on mobile.
 - `parts/header.html` retains equivalent inline Navigation Link fallbacks so the theme remains portable.
 - A new installation must not silently create navigation records on activation. Any future setup action must require administrator consent.
 - The Bulletin destination is provided by the Parish Bulletins plugin. Contact Us and Register Here require pages to be created before launch.
@@ -54,5 +55,9 @@ Theme presentation must reference semantic WordPress preset variables instead of
 Every file in `styles` must define the complete slug set. Keep normal text/background pairs at WCAG AA contrast or better. Use the `on-*` role paired with its named base family, and use `on-image` with `scrim` for text over photography.
 
 Block and Global Styles choices are authoritative. Theme CSS may provide a default only when the relevant block does not carry WordPress's `has-text-color` or `has-background` class. Do not use `!important` for color or background declarations. Layout-only `!important` declarations may be retained where required to control responsive Navigation visibility.
+
+The theme intentionally disables arbitrary custom colors, gradients, and duotones in the Site Editor. It provides named semantic presets for all three. Reusable designs must select those theme presets rather than literal color values so changing the active style variation updates those designs automatically. Every style variation must redefine the complete color, gradient, and duotone slug sets; do not add palette-specific selectors to `style.css`.
+
+Gradient presets: `quiet-surface`, `primary-depth`, `sacred-contrast`, and `gilded-accent`. Duotone presets: `primary-wash`, `primary-gold`, `secondary-wash`, and `ink-parchment`.
 
 The legacy Almandine, Barley, Mountain Moss, Sanctuary Burgundy, Ink, and White utility classes are compatibility aliases only. New theme markup must use semantic slugs.

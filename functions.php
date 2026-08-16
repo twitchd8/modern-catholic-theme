@@ -12,9 +12,53 @@
  */
 function modern_catholic_setup() {
 	add_theme_support( 'editor-styles' );
-	add_editor_style( 'style.css' );
+	add_editor_style( array( 'style.css', 'assets/css/mega-menu.css' ) );
 }
 add_action( 'after_setup_theme', 'modern_catholic_setup' );
+
+/**
+ * Register optional presentation styles for theme template parts.
+ *
+ * @return void
+ */
+function modern_catholic_register_block_styles() {
+	$theme = wp_get_theme();
+
+	wp_enqueue_block_style(
+		'core/navigation-submenu',
+		array(
+			'handle' => 'modern-catholic-mega-menu',
+			'src'    => get_theme_file_uri( 'assets/css/mega-menu.css' ),
+			'path'   => get_theme_file_path( 'assets/css/mega-menu.css' ),
+			'ver'    => $theme->get( 'Version' ),
+		)
+	);
+
+	register_block_style(
+		'core/template-part',
+		array(
+			'name'  => 'modern-catholic-stacked-header',
+			'label' => __( 'Stacked (No Overlay)', 'modern-catholic' ),
+		)
+	);
+
+	register_block_style(
+		'core/navigation-submenu',
+		array(
+			'name'  => 'modern-catholic-mega-menu-2',
+			'label' => __( 'Mega Menu — 2 Columns', 'modern-catholic' ),
+		)
+	);
+
+	register_block_style(
+		'core/navigation-submenu',
+		array(
+			'name'  => 'modern-catholic-mega-menu-3',
+			'label' => __( 'Mega Menu — 3 Columns', 'modern-catholic' ),
+		)
+	);
+}
+add_action( 'init', 'modern_catholic_register_block_styles' );
 
 /**
  * Enqueue the theme stylesheet on the front end.
