@@ -35,8 +35,9 @@ A tag identifies an exact historical commit. Do not move or reuse an existing re
 WordPress Navigation records and saved template-part overrides live in the site database, not in the theme repository.
 
 - Site Editor changes do not update theme files automatically. Deliberately synchronize reusable changes into the repository or export them with Create Block Theme.
-- ATS-WP-DEV currently uses separately managed Primary, Utility, and Mobile Navigation records.
-- The active saved Header template part references those records.
+- ATS-WP-DEV uses one canonical Main Navigation record. The active saved Header template part references it from the desktop Primary, desktop Quick Links, and Mobile Navigation views.
+- Add `modern-catholic-menu-utility` to Quick Links and `modern-catholic-menu-utility-first` to the first Quick Link. Add `modern-catholic-menu-mobile-only` to blocks, such as Search, that belong only in the mobile drawer.
+- Apply the registered Mega Menu — 2 Columns or Mega Menu — 3 Columns style to an outer Submenu whose direct children are the column Submenus. Mega menus stack as ordinary nested navigation on mobile.
 - `parts/header.html` retains equivalent inline Navigation Link fallbacks so the theme remains portable.
 - A new installation must not silently create navigation records on activation. Any future setup action must require administrator consent.
 - The Bulletin destination is provided by the Parish Bulletins plugin. Contact Us and Register Here require pages to be created before launch.

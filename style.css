@@ -105,7 +105,14 @@ body.wp-theme-modern-catholic > main {
 	background-color: var(--wp--preset--color--surface);
 }
 
-.modern-catholic-utility-navigation .wp-block-navigation-item + .wp-block-navigation-item::before {
+.modern-catholic-utility-navigation .wp-block-navigation-item:not(.modern-catholic-menu-utility),
+.modern-catholic-utility-navigation .modern-catholic-menu-mobile-only,
+.modern-catholic-primary-navigation .modern-catholic-menu-utility,
+.modern-catholic-primary-navigation .modern-catholic-menu-mobile-only {
+	display: none;
+}
+
+.modern-catholic-utility-navigation .modern-catholic-menu-utility + .modern-catholic-menu-utility::before {
 	content: "/";
 	margin-inline-end: var(--wp--style--block-gap, 0.75rem);
 	opacity: 0.55;
@@ -125,6 +132,26 @@ body.wp-theme-modern-catholic > main {
 
 .modern-catholic-mobile-navigation {
 	display: none !important;
+}
+
+@media (min-width: 75.001rem) {
+	.modern-catholic-header-bar {
+		display: grid;
+		grid-template-columns: auto minmax(0, 1fr);
+		column-gap: clamp(1rem, 3vw, 3rem);
+	}
+
+	.modern-catholic-nav-cluster {
+		min-width: 0;
+	}
+
+	.modern-catholic-primary-navigation .wp-block-navigation__container {
+		flex-wrap: nowrap;
+	}
+
+	.modern-catholic-primary-navigation .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content {
+		white-space: nowrap;
+	}
 }
 
 /* Links and interactive surfaces. */
@@ -276,7 +303,7 @@ body.admin-bar .front-page-overlay-header.is-style-modern-catholic-stacked-heade
 }
 
 /* Switch modes before the complete desktop navigation can wrap. */
-@media (max-width: 70rem) {
+@media (max-width: 75rem) {
 	.modern-catholic-utility-navigation,
 	.modern-catholic-primary-navigation {
 		display: none !important;
@@ -331,13 +358,13 @@ body.admin-bar .front-page-overlay-header.is-style-modern-catholic-stacked-heade
 		background-color: var(--wp--preset--color--surface);
 	}
 
-	.modern-catholic-mobile-navigation .modern-catholic-mobile-utility-first {
+	.modern-catholic-mobile-navigation .modern-catholic-menu-utility-first {
 		margin-block-start: 1rem;
 		padding-block-start: 1rem;
 		border-block-start: 1px solid color-mix(in srgb, var(--wp--preset--color--border-subtle) 65%, transparent);
 	}
 
-	.modern-catholic-mobile-navigation .modern-catholic-mobile-utility-link > .wp-block-navigation-item__content {
+	.modern-catholic-mobile-navigation .modern-catholic-menu-utility > .wp-block-navigation-item__content {
 		font-weight: 700;
 	}
 

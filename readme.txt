@@ -45,6 +45,15 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 
 Colors selected directly on a block remain more specific than theme defaults. Navigation's Text, Background, Submenu & overlay text, and Submenu & overlay background controls can therefore be adjusted independently after choosing a palette.
 
+== Creating a Mega Menu ==
+
+1. In the Site Editor, make the desired top-level Navigation item a Submenu.
+2. Add two or three Submenu blocks directly inside it. Their labels become the column headings.
+3. Add the destination links inside each column Submenu.
+4. Select the outer Submenu and choose Mega Menu — 2 Columns or Mega Menu — 3 Columns from the block's Styles panel.
+
+Mega-menu columns are displayed side by side on desktop and return to normal stacked nested navigation in the mobile drawer.
+
 
 == Changelog ==
 
@@ -57,6 +66,8 @@ Colors selected directly on a block remain more specific than theme defaults. Na
 * Made the stacked header use the active palette's semantic header color without the overlay blur or title shadow.
 * Moved the desktop-to-mobile navigation handoff earlier so the header switches to its hamburger before menus wrap.
 * Ordered the portable mobile popover as Primary Navigation, Quick Links, then Search, with accessible menu labels.
+* Consolidated desktop and mobile navigation onto one canonical WordPress Navigation record while retaining distinct desktop Primary and Quick Links views.
+* Added native two-column and three-column Mega Menu styles for nested Submenu blocks, with palette-aware desktop panels and stacked mobile navigation.
 * Disabled custom hex, gradient, and duotone choices so Site Editor designs use palette-aware semantic color swatches.
 * Added named semantic gradient and duotone presets to every palette while keeping arbitrary custom values disabled.
 * Synchronized theme-owned Site Editor refinements for header typography and navigation sizing.
