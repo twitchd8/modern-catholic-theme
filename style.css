@@ -2,99 +2,82 @@
 Theme Name: Modern Catholic
 Theme URI: https://github.com/twitchd8/modern-catholic-theme
 Author: Andrew T. Schmitt
-Author URI: 
+Author URI:
 Description: A modern block theme built specifically with the Catholic Church in mind.
 Requires at least: 7.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Version: 1.7.0
+Version: 1.8.0
 License: GNU General Public License v3.0 only
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: modern-catholic
-Tags: 
+Tags:
 */
 
-/*
- * Keep the complete site comfortably framed on large and ultrawide screens.
- * Percentage widths continue growing forever, so the shell uses a readable
- * 80rem ceiling while remaining fluid below that size. Using 100% instead of
- * 100vw ensures the browser scrollbar is not added to the layout width.
- */
+/* Derived layout, overlay, and shadow tokens. Base colors come from theme.json. */
 :root {
 	--modern-catholic-site-max: 80rem;
-	--modern-catholic-color-canvas: var(--wp--preset--color--canvas);
-	--modern-catholic-color-surface: var(--wp--preset--color--surface);
-	--modern-catholic-color-surface-alt: var(--wp--preset--color--surface-alt);
-	--modern-catholic-color-text: var(--wp--preset--color--foreground);
-	--modern-catholic-color-text-muted: var(--wp--preset--color--text-muted);
-	--modern-catholic-color-border: var(--wp--preset--color--border-subtle);
-	--modern-catholic-color-primary: var(--wp--preset--color--primary);
-	--modern-catholic-color-primary-700: var(--wp--preset--color--primary-700);
-	--modern-catholic-color-secondary: var(--wp--preset--color--secondary);
-	--modern-catholic-color-accent: var(--wp--preset--color--accent);
-	--modern-catholic-color-on-primary: var(--wp--preset--color--on-primary);
-	--modern-catholic-color-on-image: var(--wp--preset--color--on-image);
-	--modern-catholic-color-scrim: var(--wp--preset--color--scrim);
-	--modern-catholic-overlay-header: color-mix(in srgb, var(--modern-catholic-color-primary) 32%, transparent);
-	--modern-catholic-header-background: var(--modern-catholic-color-primary-700);
-	--modern-catholic-shadow-soft: color-mix(in srgb, var(--modern-catholic-color-text) 8%, transparent);
-	--modern-catholic-shadow-medium: color-mix(in srgb, var(--modern-catholic-color-text) 18%, transparent);
-	--modern-catholic-shadow-strong: color-mix(in srgb, var(--modern-catholic-color-scrim) 55%, transparent);
+	--modern-catholic-overlay-header: color-mix(in srgb, var(--wp--preset--color--primary) 32%, transparent);
+	--modern-catholic-header-background: var(--wp--preset--color--primary-700);
+	--modern-catholic-shadow-soft: color-mix(in srgb, var(--wp--preset--color--foreground) 8%, transparent);
+	--modern-catholic-shadow-medium: color-mix(in srgb, var(--wp--preset--color--foreground) 18%, transparent);
+	--modern-catholic-shadow-strong: color-mix(in srgb, var(--wp--preset--color--scrim) 55%, transparent);
 }
 
-body > .wp-site-blocks {
+/* Site frame: constrain the theme, plugin-owned public views, and editor canvas. */
+body > .wp-site-blocks,
+body.wp-theme-modern-catholic > :where(header, main, footer),
+.editor-styles-wrapper .is-root-container {
 	box-sizing: border-box;
 	width: 100%;
 	max-width: var(--modern-catholic-site-max);
-	min-height: 100vh;
 	margin-inline: auto;
-	color: var(--modern-catholic-color-text);
-	background-color: var(--modern-catholic-color-surface);
+}
+
+body > .wp-site-blocks,
+.editor-styles-wrapper .is-root-container {
+	color: var(--wp--preset--color--foreground);
+	background-color: var(--wp--preset--color--surface);
 	box-shadow: 0 0 2.5rem var(--modern-catholic-shadow-soft);
 }
 
-/*
- * Some public plugins render a header, main, and footer directly beneath the
- * body instead of using WordPress's .wp-site-blocks wrapper. Give those views
- * the same centered site frame without requiring plugin-specific selectors.
- */
-body.wp-theme-modern-catholic > :where(header, main, footer) {
-	box-sizing: border-box;
-	width: 100%;
-	max-width: var(--modern-catholic-site-max);
-	margin-inline: auto;
+body > .wp-site-blocks {
+	min-height: 100vh;
 }
 
 body.wp-theme-modern-catholic > main {
-	color: var(--modern-catholic-color-text);
-	background-color: var(--modern-catholic-color-surface);
+	color: var(--wp--preset--color--foreground);
+	background-color: var(--wp--preset--color--surface);
 }
 
-/*
- * The shared header uses the active palette's structural header color by
- * default. The front page overrides this below while the header is positioned
- * over the hero.
- */
-.modern-catholic-header-shell:not(.has-text-color) {
-	color: var(--modern-catholic-color-on-primary);
+.editor-styles-wrapper .is-root-container {
+	min-height: 100%;
 }
 
-.modern-catholic-header-shell:not(.has-background) {
+/* Shared header and footer defaults yield to Site Editor color classes. */
+:is(
+	.modern-catholic-header-shell,
+	.modern-catholic-footer-shell,
+	.modern-catholic-utility-navigation
+):not(.has-text-color) {
+	color: var(--wp--preset--color--on-primary);
+}
+
+:is(
+	.modern-catholic-header-shell,
+	.modern-catholic-footer-shell,
+	.modern-catholic-utility-navigation
+):not(.has-background) {
 	background: var(--modern-catholic-header-background);
 }
 
-.modern-catholic-header-shell .wp-block-site-title:not(.has-text-color),
-.modern-catholic-header-shell .wp-block-site-tagline:not(.has-text-color) {
-	color: var(--modern-catholic-color-on-primary);
-}
-
-.modern-catholic-header-shell .modern-catholic-primary-navigation:not(.has-text-color),
-.modern-catholic-header-shell .modern-catholic-mobile-navigation:not(.has-text-color) {
-	color: var(--modern-catholic-color-on-primary);
-}
-
-.modern-catholic-header-shell .wp-block-navigation__responsive-container-open svg {
-	fill: currentColor;
+.modern-catholic-header-shell :is(
+	.wp-block-site-title,
+	.wp-block-site-tagline,
+	.modern-catholic-primary-navigation,
+	.modern-catholic-mobile-navigation
+):not(.has-text-color) {
+	color: var(--wp--preset--color--on-primary);
 }
 
 .modern-catholic-nav-cluster {
@@ -105,37 +88,28 @@ body.wp-theme-modern-catholic > main {
 }
 
 .modern-catholic-utility-navigation {
-	padding: 0.45rem 0.75rem;
 	border-radius: 0.2rem;
-	font-size: 0.75rem;
-	font-weight: 700;
 	letter-spacing: 0.045em;
-	line-height: 1.25;
+	line-height: 1.0;
 	text-transform: uppercase;
 }
 
-.modern-catholic-utility-navigation:not(.has-text-color) {
-	color: var(--modern-catholic-color-on-primary);
-}
-
-.modern-catholic-utility-navigation:not(.has-background) {
-	background: var(--modern-catholic-color-primary-700);
-}
-
-/*
- * WordPress applies submenu and overlay choices to the responsive container.
- * These rules provide defaults only while no editor-selected color class is
- * present, so block-level choices always remain authoritative.
- */
 .modern-catholic-primary-navigation .wp-block-navigation__responsive-container:not(.has-text-color) .wp-block-navigation__submenu-container {
-	color: var(--modern-catholic-color-text);
+	color: var(--wp--preset--color--foreground);
 }
 
 .modern-catholic-primary-navigation .wp-block-navigation__responsive-container:not(.has-background) .wp-block-navigation__submenu-container {
-	background-color: var(--modern-catholic-color-surface);
+	background-color: var(--wp--preset--color--surface);
 }
 
-.modern-catholic-utility-navigation .wp-block-navigation-item + .wp-block-navigation-item::before {
+.modern-catholic-utility-navigation .wp-block-navigation-item:not(.modern-catholic-menu-utility),
+.modern-catholic-utility-navigation .modern-catholic-menu-mobile-only,
+.modern-catholic-primary-navigation .modern-catholic-menu-utility,
+.modern-catholic-primary-navigation .modern-catholic-menu-mobile-only {
+	display: none;
+}
+
+.modern-catholic-utility-navigation .modern-catholic-menu-utility + .modern-catholic-menu-utility::before {
 	content: "/";
 	margin-inline-end: var(--wp--style--block-gap, 0.75rem);
 	opacity: 0.55;
@@ -147,8 +121,7 @@ body.wp-theme-modern-catholic > main {
 	text-decoration: none;
 }
 
-.modern-catholic-utility-navigation .wp-block-navigation-item__content:hover,
-.modern-catholic-utility-navigation .wp-block-navigation-item__content:focus-visible {
+.modern-catholic-utility-navigation .wp-block-navigation-item__content:is(:hover, :focus-visible) {
 	text-decoration: underline;
 	text-decoration-thickness: 0.1em;
 	text-underline-offset: 0.22em;
@@ -158,47 +131,60 @@ body.wp-theme-modern-catholic > main {
 	display: none !important;
 }
 
+@media (min-width: 75.001rem) {
+	.modern-catholic-header-bar {
+		display: grid;
+		grid-template-columns: auto minmax(0, 1fr);
+		column-gap: clamp(1rem, 3vw, 3rem);
+	}
+
+	.modern-catholic-nav-cluster {
+		min-width: 0;
+	}
+
+	.modern-catholic-primary-navigation .wp-block-navigation__container {
+		flex-wrap: nowrap;
+	}
+
+	.modern-catholic-primary-navigation .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content {
+		white-space: nowrap;
+	}
+}
+
+/* Links and interactive surfaces. */
 .wp-site-blocks :where(a:not(.wp-element-button)) {
 	text-decoration-color: color-mix(in srgb, currentColor 55%, transparent);
 	text-underline-offset: 0.16em;
 }
 
-.wp-site-blocks :where(a:not(.wp-element-button)):hover,
-.wp-site-blocks :where(a:not(.wp-element-button)):focus-visible {
+.wp-site-blocks :where(a:not(.wp-element-button)):is(:hover, :focus-visible) {
 	text-decoration-color: currentColor;
 }
 
-.wp-element-button,
-.wp-block-button__link {
+:is(.wp-element-button, .wp-block-button__link) {
 	transition: background-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
 }
 
-.wp-element-button:hover,
-.wp-element-button:focus-visible,
-.wp-block-button__link:hover,
-.wp-block-button__link:focus-visible {
+:is(.wp-element-button, .wp-block-button__link):is(:hover, :focus-visible) {
 	box-shadow: 0 0.35rem 1rem var(--modern-catholic-shadow-medium);
 	transform: translateY(-0.08rem);
 }
 
-/* Backward-compatible aliases for content created before semantic palettes. */
-.has-almandine-color { color: var(--modern-catholic-color-surface); }
-.has-almandine-background-color { background-color: var(--modern-catholic-color-surface); }
-.has-barley-color { color: var(--modern-catholic-color-surface-alt); }
-.has-barley-background-color { background-color: var(--modern-catholic-color-surface-alt); }
-.has-mountain-moss-color { color: var(--modern-catholic-color-secondary); }
-.has-mountain-moss-background-color { background-color: var(--modern-catholic-color-secondary); }
-.has-sanctuary-burgundy-color { color: var(--modern-catholic-color-primary); }
-.has-sanctuary-burgundy-background-color { background-color: var(--modern-catholic-color-primary); }
-.has-black-color { color: var(--modern-catholic-color-text); }
-.has-black-background-color { background-color: var(--modern-catholic-color-scrim); }
-.has-white-color { color: var(--modern-catholic-color-on-image); }
-.has-white-background-color { background-color: var(--modern-catholic-color-on-image); }
+/* Compatibility for content saved before semantic color palettes. */
+.has-almandine-color { color: var(--wp--preset--color--surface); }
+.has-almandine-background-color { background-color: var(--wp--preset--color--surface); }
+.has-barley-color { color: var(--wp--preset--color--surface-alt); }
+.has-barley-background-color { background-color: var(--wp--preset--color--surface-alt); }
+.has-mountain-moss-color { color: var(--wp--preset--color--secondary); }
+.has-mountain-moss-background-color { background-color: var(--wp--preset--color--secondary); }
+.has-sanctuary-burgundy-color { color: var(--wp--preset--color--primary); }
+.has-sanctuary-burgundy-background-color { background-color: var(--wp--preset--color--primary); }
+.has-black-color { color: var(--wp--preset--color--foreground); }
+.has-black-background-color { background-color: var(--wp--preset--color--scrim); }
+.has-white-color { color: var(--wp--preset--color--on-image); }
+.has-white-background-color { background-color: var(--wp--preset--color--on-image); }
 
-/*
- * Let the front-page hero occupy the first viewport while keeping the shared
- * header in normal document flow on every other template.
- */
+/* Front-page overlay, sticky state, and optional stacked style. */
 .front-page-overlay-header {
 	position: fixed;
 	top: 0;
@@ -213,7 +199,7 @@ body.wp-theme-modern-catholic > main {
 }
 
 .front-page-overlay-header:not(.has-text-color) {
-	color: var(--modern-catholic-color-on-image);
+	color: var(--wp--preset--color--on-image);
 }
 
 .front-page-overlay-header:not(.has-background) {
@@ -224,47 +210,64 @@ body.wp-theme-modern-catholic > main {
 	margin-block-start: 0;
 }
 
-.front-page-overlay-header .modern-catholic-header-shell:not(.has-background),
-.front-page-overlay-header .modern-catholic-header-bar:not(.has-background) {
+.front-page-overlay-header :is(
+	.modern-catholic-header-shell,
+	.modern-catholic-header-bar
+):not(.has-background) {
 	background: transparent;
 }
 
 .front-page-overlay-header .wp-block-site-title,
 .front-page-overlay-header .wp-block-site-title a {
-	text-shadow: 0 1px 2px var(--modern-catholic-color-scrim), 0 0 0.75rem var(--modern-catholic-shadow-strong);
+	text-shadow: 0 1px 2px var(--wp--preset--color--scrim), 0 0 0.75rem var(--modern-catholic-shadow-strong);
 }
 
-.front-page-overlay-header .wp-block-site-tagline,
+.front-page-overlay-header .wp-block-site-tagline:not(.has-text-color),
 .front-page-overlay-header .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content {
 	color: inherit;
 }
 
-.front-page-overlay-header.is-past-hero:not(.has-background) {
+.front-page-overlay-header:is(.is-past-hero, .is-style-modern-catholic-stacked-header):not(.has-background) {
 	background: var(--modern-catholic-header-background);
+}
+
+.front-page-overlay-header.is-past-hero {
 	box-shadow: 0 0.5rem 1.5rem var(--modern-catholic-shadow-medium);
 	-webkit-backdrop-filter: blur(0.75rem);
 	backdrop-filter: blur(0.75rem);
 }
 
-.front-page-overlay-header.is-past-hero .modern-catholic-header-shell:not(.has-background),
-.front-page-overlay-header.is-past-hero .modern-catholic-header-bar:not(.has-background) {
-	background: transparent;
+.front-page-overlay-header.is-style-modern-catholic-stacked-header {
+	position: relative;
+	inset: auto;
+	z-index: auto;
+	width: 100%;
+	-webkit-backdrop-filter: none;
+	backdrop-filter: none;
+	box-shadow: none;
 }
 
-/*
- * A Single Post with a featured image promotes that image to a hero and lets
- * the shared header sit over it. Posts without an image retain the solid
- * global header treatment above.
- */
+.front-page-overlay-header.is-style-modern-catholic-stacked-header .wp-block-site-title,
+.front-page-overlay-header.is-style-modern-catholic-stacked-header .wp-block-site-title a {
+	text-shadow: none;
+}
+
+body.admin-bar .front-page-overlay-header {
+	top: 32px;
+}
+
+body.admin-bar .front-page-overlay-header.is-style-modern-catholic-stacked-header {
+	top: auto;
+}
+
+/* Featured-image treatment for Single Posts. */
 .single-post.modern-catholic-has-featured-image .wp-site-blocks {
 	position: relative;
 }
 
 .single-post.modern-catholic-has-featured-image .single-post-header {
 	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
+	inset: 0 0 auto;
 	z-index: 90;
 }
 
@@ -285,14 +288,7 @@ body.wp-theme-modern-catholic > main {
 	object-fit: cover;
 }
 
-.modern-catholic-footer-shell:not(.has-text-color) {
-	color: var(--modern-catholic-color-on-primary);
-}
-
-.modern-catholic-footer-shell:not(.has-background) {
-	background: var(--modern-catholic-header-background);
-}
-
+/* Footer and anchored front-page sections. */
 .modern-catholic-footer-shell a,
 .modern-catholic-footer-shell a:visited {
 	color: inherit;
@@ -303,15 +299,8 @@ body.wp-theme-modern-catholic > main {
 	scroll-margin-top: 9rem;
 }
 
-body.admin-bar .front-page-overlay-header {
-	top: 32px;
-}
-
-@media (max-width: 782px) {
-	body.admin-bar .front-page-overlay-header {
-		top: 46px;
-	}
-
+/* Switch modes before the complete desktop navigation can wrap. */
+@media (max-width: 75rem) {
 	.modern-catholic-utility-navigation,
 	.modern-catholic-primary-navigation {
 		display: none !important;
@@ -321,10 +310,29 @@ body.admin-bar .front-page-overlay-header {
 		display: flex !important;
 	}
 
-	.modern-catholic-header-tools .wp-block-search {
-		display: none;
+	.modern-catholic-nav-cluster > .modern-catholic-header-tools {
+		display: none !important;
 	}
 
+	.modern-catholic-header-bar {
+		flex-wrap: nowrap;
+	}
+
+	.modern-catholic-header-bar > .wp-block-group:first-child {
+		flex: 1 1 auto;
+		min-width: 0;
+		flex-wrap: nowrap;
+	}
+
+	.modern-catholic-header-bar > .wp-block-group:first-child > .wp-block-group {
+		min-width: 0;
+	}
+
+	.modern-catholic-nav-cluster {
+		flex: 0 0 auto;
+	}
+
+	/* WordPress core switches Navigation at 600px; extend it to our breakpoint. */
 	.modern-catholic-mobile-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) {
 		display: none !important;
 	}
@@ -334,37 +342,42 @@ body.admin-bar .front-page-overlay-header {
 	}
 
 	.modern-catholic-mobile-navigation .wp-block-navigation__responsive-container.is-menu-open {
-		position: fixed;
-		inset: 0;
-		box-sizing: border-box;
-		width: auto;
-		height: 100vh;
 		height: 100dvh;
 		min-height: 0;
 		overflow-x: hidden;
 	}
 
-	.modern-catholic-mobile-navigation .wp-block-navigation__responsive-container.is-menu-open:not(.has-text-color) {
-		color: var(--modern-catholic-color-text);
+	.modern-catholic-mobile-navigation:not(.has-text-color) .wp-block-navigation__responsive-container.is-menu-open:not(.has-text-color):not(.disable-default-overlay) {
+		color: var(--wp--preset--color--foreground);
 	}
 
-	.modern-catholic-mobile-navigation .wp-block-navigation__responsive-container.is-menu-open:not(.has-background) {
-		background-color: var(--modern-catholic-color-surface);
+	.modern-catholic-mobile-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open:not(.has-background):not(.disable-default-overlay) {
+		background-color: var(--wp--preset--color--surface);
 	}
 
-	.modern-catholic-mobile-navigation .modern-catholic-mobile-utility-first {
+	.modern-catholic-mobile-navigation .modern-catholic-menu-utility-first {
 		margin-block-start: 1rem;
 		padding-block-start: 1rem;
-		border-block-start: 1px solid color-mix(in srgb, var(--modern-catholic-color-border) 65%, transparent);
+		border-block-start: 1px solid color-mix(in srgb, var(--wp--preset--color--border-subtle) 65%, transparent);
 	}
 
-	.modern-catholic-mobile-navigation .modern-catholic-mobile-utility-link > .wp-block-navigation-item__content {
+	.modern-catholic-mobile-navigation .modern-catholic-menu-utility > .wp-block-navigation-item__content {
 		font-weight: 700;
 	}
 
 	.modern-catholic-mobile-menu-search {
 		width: min(20rem, 100%);
 		margin-block-start: 1.5rem;
+	}
+}
+
+@media (max-width: 782px) {
+	body.admin-bar .front-page-overlay-header {
+		top: 46px;
+	}
+
+	body.admin-bar .front-page-overlay-header.is-style-modern-catholic-stacked-header {
+		top: auto;
 	}
 }
 
@@ -383,43 +396,26 @@ body.admin-bar .front-page-overlay-header {
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.front-page-overlay-header,
-	.wp-element-button,
-	.wp-block-button__link {
+	:is(.front-page-overlay-header, .wp-element-button, .wp-block-button__link) {
 		transition: none;
 	}
 
-	.wp-element-button:hover,
-	.wp-element-button:focus-visible,
-	.wp-block-button__link:hover,
-	.wp-block-button__link:focus-visible {
+	:is(.wp-element-button, .wp-block-button__link):is(:hover, :focus-visible) {
 		transform: none;
 	}
 }
 
-/* Keep the fixed treatment out of the Site Editor canvas. */
-.editor-styles-wrapper .is-root-container {
-	box-sizing: border-box;
-	width: 100%;
-	max-width: var(--modern-catholic-site-max);
-	min-height: 100%;
-	margin-inline: auto;
-	color: var(--modern-catholic-color-text);
-	background-color: var(--modern-catholic-color-surface);
-	box-shadow: 0 0 2.5rem var(--modern-catholic-shadow-soft);
-}
-
+/* Keep the fixed front-page treatment out of the Site Editor canvas. */
 .editor-styles-wrapper .front-page-overlay-header {
 	position: relative;
-	top: auto;
-	left: auto;
-	right: auto;
+	inset: auto;
 	width: 100%;
 }
 
+/* Post grid and stretched-card interaction. */
 .church-post-card-grid .wp-block-post-template {
 	display: grid;
-	grid-template-columns: repeat(3, minmax(0, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(min(18rem, 100%), 1fr));
 	gap: clamp(1rem, 2.5vw, 2rem);
 }
 
@@ -430,8 +426,7 @@ body.admin-bar .front-page-overlay-header {
 	transition: box-shadow 160ms ease, transform 160ms ease;
 }
 
-.church-post-card:hover,
-.church-post-card:focus-within {
+.church-post-card:is(:hover, :focus-within) {
 	box-shadow: 0 0.75rem 2rem var(--modern-catholic-shadow-medium);
 	transform: translateY(-0.2rem);
 }
@@ -443,22 +438,12 @@ body.admin-bar .front-page-overlay-header {
 	z-index: 1;
 }
 
-.church-post-card .wp-block-post-featured-image a,
-.church-post-card .wp-block-post-author a,
-.church-post-card .wp-block-post-date a,
-.church-post-card .wp-block-post-excerpt__more-link {
+.church-post-card :is(
+	.wp-block-post-featured-image a,
+	.wp-block-post-author a,
+	.wp-block-post-date a,
+	.wp-block-post-excerpt__more-link
+) {
 	position: relative;
 	z-index: 2;
-}
-
-@media (max-width: 52rem) {
-	.church-post-card-grid .wp-block-post-template {
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-	}
-}
-
-@media (max-width: 36rem) {
-	.church-post-card-grid .wp-block-post-template {
-		grid-template-columns: 1fr;
-	}
 }

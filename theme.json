@@ -4,7 +4,11 @@
 	"settings": {
 		"appearanceTools": true,
 		"color": {
-			"custom": true,
+			"custom": false,
+			"customDuotone": false,
+			"customGradient": false,
+			"defaultDuotone": false,
+			"defaultGradients": false,
 			"defaultPalette": false,
 			"palette": [
 				{
@@ -136,6 +140,50 @@
 					"color": "#1b1714",
 					"name": "Image Scrim",
 					"slug": "scrim"
+				}
+			],
+			"gradients": [
+				{
+					"gradient": "linear-gradient(135deg, #f7f1e2 0%, #ddca91 100%)",
+					"name": "Quiet Surface",
+					"slug": "quiet-surface"
+				},
+				{
+					"gradient": "linear-gradient(135deg, #35101b 0%, #7a2038 100%)",
+					"name": "Primary Depth",
+					"slug": "primary-depth"
+				},
+				{
+					"gradient": "linear-gradient(135deg, #5d172a 0%, #52695b 100%)",
+					"name": "Sacred Contrast",
+					"slug": "sacred-contrast"
+				},
+				{
+					"gradient": "linear-gradient(135deg, #f7efd8 0%, #a17b28 100%)",
+					"name": "Gilded Accent",
+					"slug": "gilded-accent"
+				}
+			],
+			"duotone": [
+				{
+					"colors": ["#35101b", "#f4e3e8"],
+					"name": "Primary Wash",
+					"slug": "primary-wash"
+				},
+				{
+					"colors": ["#35101b", "#dec67f"],
+					"name": "Primary and Gold",
+					"slug": "primary-gold"
+				},
+				{
+					"colors": ["#26342c", "#e4ebe6"],
+					"name": "Secondary Wash",
+					"slug": "secondary-wash"
+				},
+				{
+					"colors": ["#28251f", "#f7f1e2"],
+					"name": "Ink and Parchment",
+					"slug": "ink-parchment"
 				}
 			]
 		},
