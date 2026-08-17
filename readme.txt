@@ -57,6 +57,9 @@ Mega-menu columns are displayed side by side on desktop and return to normal sta
 
 == Changelog ==
 
+= 1.8.1 =
+* Add a fully formatted GitHub README with Modern Catholic branding, compatibility badges, installation guidance, component boundaries, and GPL-3.0-only licensing.
+
 = 1.8.0 =
 * Condensed and reorganized the theme stylesheet by removing WordPress-core duplicates, unused aliases, and redundant responsive rules.
 * Replaced intermediate base-color aliases with direct semantic WordPress preset references while retaining derived overlay and shadow tokens.
