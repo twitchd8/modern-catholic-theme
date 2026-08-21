@@ -10,17 +10,17 @@
 
 1. Switch the ATS working copy to `dev`.
 2. Pull the latest `dev`.
-3. Make and test changes locally.
+3. Make changes and run targeted non-runtime checks.
 4. Commit the tested change to `dev`, or merge a feature branch into `dev`.
 
 ## Releasing
 
 1. Confirm the `dev` working tree is clean.
-2. Test the complete change in ATS-WP-DEV.
+2. Run applicable non-runtime checks. Any LocalWP, WordPress, HTTP, browser, Site Editor, database, or rendered-output smoke test requires separate explicit user approval.
 3. Open a pull request from `dev` to `main`.
 4. Review the diff and merge only when it is ready for production.
 5. Deploy the resulting `main` commit.
-6. Create and push a dated release tag for the deployed commit.
+6. Create and push a `vX.Y.Z` release tag for the exact deployed commit.
 
 ## Emergency Recovery
 
