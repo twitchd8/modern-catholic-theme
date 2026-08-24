@@ -25,10 +25,10 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 * Uses a warm off-white site surface while preserving Global Styles background textures in the outer margins.
 * Bundles a subtle paper texture as the portable outer-background default while allowing Global Styles to replace or remove it.
 * Provides a semantic WordPress color system for canvas, surfaces, foreground text, borders, three tonal color scales, and accessible contrast colors.
-* Includes the photo-inspired Sanctuary default plus Marian Blue, Cloister Green, and Advent Violet style variations.
+* Includes 13 curated style variations built on six editable semantic foundation colors.
 * Allows editor-selected semantic presets to override theme defaults, including navigation submenu and mobile-overlay colors.
 * Maps theme surfaces, text, links, buttons, shadows, overlays, and structural accents to reusable palette variables.
-* Provides four palette-aware gradients and four palette-aware photographic duotones in every included color scheme.
+* Provides four variable-driven gradients and four curated photographic duotones in every included color scheme.
 * Includes reusable header and footer template parts.
 * Uses the responsive Navigation block, including its built-in mobile overlay behavior.
 * Overlays the front-page header on the hero and converts it to a readable sticky bar after the hero scrolls away.
@@ -40,7 +40,7 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 
 1. Open Appearance > Editor.
 2. Open Styles, then Browse styles.
-3. Choose Default for the Sanctuary palette, or select Marian Blue, Cloister Green, or Advent Violet.
+3. Choose Default for Sanctuary, or select any of the 12 bundled variations.
 4. Save the Global Styles change.
 
 Colors selected directly on a block remain more specific than theme defaults. Navigation's Text, Background, Submenu & overlay text, and Submenu & overlay background controls can therefore be adjusted independently after choosing a palette.
@@ -56,6 +56,12 @@ Mega-menu columns are displayed side by side on desktop and return to normal sta
 
 
 == Changelog ==
+
+= 1.8.2 =
+* Add a WordPress-native semantic color contract with six editable foundation colors and dynamic supporting tones.
+* Expand the theme to 13 curated style variations with variable-driven gradients and variation-specific duotones.
+* Add the Modern Catholic admin menu and read-only Color & Style Guide with palette descriptions and editing guidance.
+* Add automatic solid-brand contrast support, shared status roles, accessible focus treatment, and regression checks.
 
 = 1.8.1 =
 * Add a fully formatted GitHub README with Modern Catholic branding, compatibility badges, installation guidance, component boundaries, and GPL-3.0-only licensing.
