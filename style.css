@@ -7,7 +7,7 @@ Description: A modern block theme built specifically with the Catholic Church in
 Requires at least: 7.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Version: 1.8.2
+Version: 1.8.3
 License: GNU General Public License v3.0 only
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: modern-catholic
@@ -150,6 +150,10 @@ body.wp-theme-modern-catholic > main {
 	text-transform: uppercase;
 }
 
+.modern-catholic-utility-navigation .wp-block-navigation__container {
+	column-gap: 0;
+}
+
 .modern-catholic-primary-navigation .wp-block-navigation__responsive-container:not(.has-text-color) .wp-block-navigation__submenu-container {
 	color: var(--wp--preset--color--foreground);
 }
@@ -167,7 +171,7 @@ body.wp-theme-modern-catholic > main {
 
 .modern-catholic-utility-navigation .modern-catholic-menu-utility + .modern-catholic-menu-utility::before {
 	content: "/";
-	margin-inline-end: var(--wp--style--block-gap, 0.75rem);
+	margin-inline: calc(var(--wp--style--block-gap, 0.75rem) / 2);
 	opacity: 0.55;
 }
 
@@ -188,7 +192,7 @@ body.wp-theme-modern-catholic > main {
 }
 
 @media (min-width: 75.001rem) {
-	.modern-catholic-header-bar {
+	.wp-block-group.modern-catholic-header-bar {
 		display: grid;
 		grid-template-columns: auto minmax(0, 1fr);
 		column-gap: clamp(1rem, 3vw, 3rem);
@@ -301,6 +305,35 @@ body.wp-theme-modern-catholic > main {
 	-webkit-backdrop-filter: none;
 	backdrop-filter: none;
 	box-shadow: none;
+}
+
+/* Pattern-based alternative for installations where Template Part styles cannot be previewed. */
+.front-page-stacked-header {
+	position: relative;
+	inset: auto;
+	z-index: auto;
+	box-sizing: border-box;
+	width: 100%;
+	max-width: var(--modern-catholic-site-max);
+	margin-inline: auto;
+	-webkit-backdrop-filter: none;
+	backdrop-filter: none;
+	box-shadow: none;
+}
+
+.front-page-stacked-header:not(.has-text-color) {
+	color: var(--mc-color-on-primary);
+}
+
+.front-page-stacked-header:not(.has-background) {
+	background: var(--modern-catholic-header-background);
+}
+
+.front-page-stacked-header :is(
+	.modern-catholic-header-shell,
+	.modern-catholic-header-bar
+):not(.has-background) {
+	background: transparent;
 }
 
 .front-page-overlay-header.is-style-modern-catholic-stacked-header .wp-block-site-title,
