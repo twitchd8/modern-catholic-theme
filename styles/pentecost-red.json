@@ -1,112 +1,112 @@
 {
 	"$schema": "https://schemas.wp.org/wp/7.0/theme.json",
 	"version": 3,
-	"title": "Advent Violet",
+	"title": "Pentecost Red",
 	"settings": {
 		"color": {
 			"palette": [
 				{
-					"color": "#e9e3eb",
+					"color": "#eee1d9",
 					"name": "Canvas",
 					"slug": "canvas"
 				},
 				{
-					"color": "#f8f3f5",
+					"color": "#fff7ed",
 					"name": "Surface",
 					"slug": "surface"
 				},
 				{
-					"color": "#eae2e8",
+					"color": "#f5e3d9",
 					"name": "Alternate Surface",
 					"slug": "surface-alt"
 				},
 				{
-					"color": "#2d2530",
+					"color": "#2d211f",
 					"name": "Foreground",
 					"slug": "foreground"
 				},
 				{
-					"color": "#6e676f",
+					"color": "#706561",
 					"name": "Muted Text",
 					"slug": "text-muted"
 				},
 				{
-					"color": "#c7c2c6",
+					"color": "#cdc4bc",
 					"name": "Border",
 					"slug": "border-subtle"
 				},
 				{
-					"color": "#e7dee5",
+					"color": "#f3dfd5",
 					"name": "Primary 100",
 					"slug": "primary-100"
 				},
 				{
-					"color": "#c1b1c2",
+					"color": "#daa9a2",
 					"name": "Primary 300",
 					"slug": "primary-300"
 				},
 				{
-					"color": "#68456f",
+					"color": "#9d2b27",
 					"name": "Primary",
 					"slug": "primary"
 				},
 				{
-					"color": "#5b3e61",
+					"color": "#842925",
 					"name": "Primary 700",
 					"slug": "primary-700"
 				},
 				{
-					"color": "#4f3855",
+					"color": "#6e2724",
 					"name": "Primary 900",
 					"slug": "primary-900"
 				},
 				{
-					"color": "#ede0e5",
+					"color": "#f6e5d6",
 					"name": "Secondary 100",
 					"slug": "secondary-100"
 				},
 				{
-					"color": "#d4b6c2",
+					"color": "#e4bfa3",
 					"name": "Secondary 300",
 					"slug": "secondary-300"
 				},
 				{
-					"color": "#9a526f",
+					"color": "#b7642a",
 					"name": "Secondary",
 					"slug": "secondary"
 				},
 				{
-					"color": "#824861",
+					"color": "#995528",
 					"name": "Secondary 700",
 					"slug": "secondary-700"
 				},
 				{
-					"color": "#6c3f55",
+					"color": "#7d4825",
 					"name": "Secondary 900",
 					"slug": "secondary-900"
 				},
 				{
-					"color": "#efe6dd",
+					"color": "#faeed8",
 					"name": "Accent 100",
 					"slug": "accent-100"
 				},
 				{
-					"color": "#ddcba9",
+					"color": "#eed9ab",
 					"name": "Accent 300",
 					"slug": "accent-300"
 				},
 				{
-					"color": "#b08a2e",
+					"color": "#d3a83e",
 					"name": "Accent",
 					"slug": "accent"
 				},
 				{
-					"color": "#93742e",
+					"color": "#ae8a37",
 					"name": "Accent 700",
 					"slug": "accent-700"
 				},
 				{
-					"color": "#79602f",
+					"color": "#8d6f31",
 					"name": "Accent 900",
 					"slug": "accent-900"
 				},
@@ -116,7 +116,7 @@
 					"slug": "on-primary"
 				},
 				{
-					"color": "#fffaf0",
+					"color": "#0f0d09",
 					"name": "On Secondary",
 					"slug": "on-secondary"
 				},
@@ -131,7 +131,7 @@
 					"slug": "on-image"
 				},
 				{
-					"color": "#2d2530",
+					"color": "#2d211f",
 					"name": "Image Scrim",
 					"slug": "scrim"
 				}
@@ -161,32 +161,32 @@
 			"duotone": [
 				{
 					"colors": [
-						"#4f3855",
-						"#e7dee5"
+						"#6e2724",
+						"#f3dfd5"
 					],
 					"name": "Primary Wash",
 					"slug": "primary-wash"
 				},
 				{
 					"colors": [
-						"#4f3855",
-						"#ddcba9"
+						"#6e2724",
+						"#eed9ab"
 					],
 					"name": "Primary and Gold",
 					"slug": "primary-gold"
 				},
 				{
 					"colors": [
-						"#6c3f55",
-						"#ede0e5"
+						"#7d4825",
+						"#f6e5d6"
 					],
 					"name": "Secondary Wash",
 					"slug": "secondary-wash"
 				},
 				{
 					"colors": [
-						"#2d2530",
-						"#f8f3f5"
+						"#2d211f",
+						"#fff7ed"
 					],
 					"name": "Ink and Parchment",
 					"slug": "ink-parchment"

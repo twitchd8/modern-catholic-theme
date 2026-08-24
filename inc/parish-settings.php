@@ -304,12 +304,21 @@ function modern_catholic_render_parish_setting_field( $args ) {
 function modern_catholic_add_parish_settings_page() {
 	add_menu_page(
 		__( 'MC Theme Settings', 'modern-catholic' ),
-		__( 'MC Theme Settings', 'modern-catholic' ),
+		__( 'Modern Catholic', 'modern-catholic' ),
 		'edit_theme_options',
 		'modern-catholic-settings',
 		'modern_catholic_render_parish_settings_page',
 		'dashicons-admin-site-alt3',
 		61
+	);
+
+	add_submenu_page(
+		'modern-catholic-settings',
+		__( 'MC Theme Settings', 'modern-catholic' ),
+		__( 'MC Theme Settings', 'modern-catholic' ),
+		'edit_theme_options',
+		'modern-catholic-settings',
+		'modern_catholic_render_parish_settings_page'
 	);
 }
 add_action( 'admin_menu', 'modern_catholic_add_parish_settings_page' );

@@ -49,6 +49,13 @@ The theme owns presentation, templates, patterns, styles, and layout. Parish fun
 
 ## Changelog
 
+### 1.8.2
+
+- Add a WordPress-native semantic color contract with six editable foundation colors and dynamic supporting tones.
+- Expand the theme to 13 curated style variations with variable-driven gradients and variation-specific duotones.
+- Add the Modern Catholic admin menu and read-only Color & Style Guide.
+- Add automatic contrast, shared status roles, accessible focus treatment, and regression checks.
+
 ### 1.8.1
 
 - Add a fully formatted GitHub README with Modern Catholic branding, compatibility badges, installation guidance, component boundaries, and GPL-3.0-only licensing.

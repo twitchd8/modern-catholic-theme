@@ -106,3 +106,4 @@ function modern_catholic_featured_header_body_class( $classes ) {
 add_filter( 'body_class', 'modern_catholic_featured_header_body_class' );
 
 require_once get_theme_file_path( 'inc/parish-settings.php' );
+require_once get_theme_file_path( 'inc/color-style-guide.php' );
