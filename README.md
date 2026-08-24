@@ -49,6 +49,12 @@ The theme owns presentation, templates, patterns, styles, and layout. Parish fun
 
 ## Changelog
 
+### 1.8.3
+
+- Add a reusable Stacked (No Overlay) Header pattern that continues to use the shared Header template part.
+- Keep the desktop navigation right-aligned when WordPress-generated flex layout CSS is loaded after the theme stylesheet.
+- Center Quick Links separators by dividing the shared spacing evenly on both sides.
+
 ### 1.8.2
 
 - Add a WordPress-native semantic color contract with six editable foundation colors and dynamic supporting tones.
