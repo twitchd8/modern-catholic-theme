@@ -68,3 +68,13 @@ test('quick-link separators receive equal spacing on both sides', async () => {
 	);
 	assert.doesNotMatch(separatorRule[1], /margin-inline-(?:start|end)/);
 });
+
+test('the shared header includes desktop icon search and mobile menu search', async () => {
+	const header = await readFile(new URL('parts/header.html', themeRoot), 'utf8');
+	const stacked = await readFile(new URL('patterns/header-stacked.php', themeRoot), 'utf8');
+
+	assert.match(header, /className":"modern-catholic-header-tools"/);
+	assert.match(header, /buttonPosition":"button-only","buttonUseIcon":true[^}]*"className":"modern-catholic-header-search"/);
+	assert.match(header, /className":"modern-catholic-menu-mobile-only modern-catholic-mobile-menu-search"/);
+	assert.match(stacked, /"slug":"header"/);
+});

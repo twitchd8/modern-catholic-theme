@@ -216,6 +216,25 @@
 		"typography": {
 			"fontFamilies": [
 				{
+					"fontFamily": "\"Open Sans\", Arial, sans-serif",
+					"fontFace": [
+						{
+							"fontFamily": "Open Sans",
+							"fontStyle": "normal",
+							"fontWeight": "300 800",
+							"src": ["file:./assets/fonts/open-sans/open-sans-variable.ttf"]
+						},
+						{
+							"fontFamily": "Open Sans",
+							"fontStyle": "italic",
+							"fontWeight": "300 800",
+							"src": ["file:./assets/fonts/open-sans/open-sans-italic-variable.ttf"]
+						}
+					],
+					"name": "Open Sans",
+					"slug": "open-sans"
+				},
+				{
 					"fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
 					"name": "System Font",
 					"slug": "system-font"
@@ -260,6 +279,9 @@
 				"left": "clamp(1rem, 4vw, 2.5rem)",
 				"right": "clamp(1rem, 4vw, 2.5rem)"
 			}
+		},
+		"typography": {
+			"fontFamily": "var:preset|font-family|open-sans"
 		}
 	},
 	"templateParts": [
