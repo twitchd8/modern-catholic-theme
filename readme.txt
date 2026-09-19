@@ -17,7 +17,7 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 
 * Uses the WordPress 7.0 theme.json schema and Global Styles system.
 * Enables the standard appearance tools available in the Site Editor.
-* Uses the visitor's system font stack without requiring an external font service.
+* Bundles Open Sans locally as the default font without requiring an external font service; the system font remains selectable.
 * Uses a readable 42rem maximum content width and a 75rem wide-content maximum.
 * Uses fluid horizontal page gutters that scale from 1rem to 2.5rem according to the viewport width.
 * Frames the entire site in a fluid, centered shell with an 80rem maximum width.
@@ -29,6 +29,7 @@ A modern WordPress block theme built specifically with the Catholic Church in mi
 * Allows editor-selected semantic presets to override theme defaults, including navigation submenu and mobile-overlay colors.
 * Maps theme surfaces, text, links, buttons, shadows, overlays, and structural accents to reusable palette variables.
 * Provides four variable-driven gradients and four curated photographic duotones in every included color scheme.
+* Provides palette-aware raised information panels with optional Accent, Secondary, or Primary top strips.
 * Includes reusable header and footer template parts.
 * Uses the responsive Navigation block, including its built-in mobile overlay behavior.
 * Overlays the front-page header on the hero and converts it to a readable sticky bar after the hero scrolls away.
@@ -55,7 +56,18 @@ Colors selected directly on a block remain more specific than theme defaults. Na
 Mega-menu columns are displayed side by side on desktop and return to normal stacked nested navigation in the mobile drawer.
 
 
+== Raised Information Panels ==
+
+Select a Group or Column block and choose Raised Panel in the Styles controls. Alternatively, add mc-card or mc-card-accent1 in Advanced > Additional CSS class(es) for an Accent strip, mc-card-accent2 for Secondary, or mc-card-accent3 for Primary. Surfaces, borders, shadows, and strips adapt to the active theme palette. Explicit block background colors remain editable.
+
+
 == Changelog ==
+
+= 1.8.4 =
+* Give theme-owned information sections raised, palette-aware Surface panels over the Canvas background.
+* Add a reusable Raised Panel block style and mc-card-accent1, mc-card-accent2, and mc-card-accent3 classes for Accent, Secondary, and Primary strips.
+* Bundle Open Sans locally with its Open Font License and make it the default, while retaining the system font option.
+* Add a desktop search icon to the shared header, including its no-overlay version; retain Search inside the mobile menu.
 
 = 1.8.3 =
 * Add a reusable Stacked (No Overlay) Header pattern that continues to use the shared Header template part.
@@ -184,6 +196,7 @@ Modern Catholic WordPress Theme, (C) 2026 Andrew T. Schmitt
 Modern Catholic is distributed under GNU GPL version 3.0 only.
 
 The bundled `assets/images/textured-paper.png` theme asset is distributed under the same GNU GPL version 3.0-only license.
+The bundled Open Sans font files are distributed under the SIL Open Font License, version 1.1; see `assets/fonts/open-sans/OFL.txt`.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

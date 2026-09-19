@@ -95,6 +95,7 @@ function modern_catholic_render_color_style_guide_page() {
 	<div class="wrap modern-catholic-style-guide">
 		<h1><?php esc_html_e( 'Color & Style Guide', 'modern-catholic' ); ?></h1>
 		<p><?php esc_html_e( 'Modern Catholic uses six editable Theme colors. The theme and compatible plugins derive their supporting tones from these foundation colors.', 'modern-catholic' ); ?></p>
+		<p><?php esc_html_e( 'Open Sans is bundled locally as the default font. The system font remains available under Styles → Typography.', 'modern-catholic' ); ?></p>
 		<h2><?php esc_html_e( 'Edit parish brand colors', 'modern-catholic' ); ?></h2>
 		<ol>
 			<li><?php esc_html_e( 'Open Appearance → Editor → Styles → Colors → Palette.', 'modern-catholic' ); ?></li>
@@ -106,6 +107,9 @@ function modern_catholic_render_color_style_guide_page() {
 		<h2><?php esc_html_e( 'Semantic roles', 'modern-catholic' ); ?></h2>
 		<p><?php esc_html_e( 'Canvas is the page backdrop; Surface contains content; Foreground is readable text; Primary is the dominant parish brand; Secondary supports it; Accent is reserved for emphasis and focus. Muted text, borders, softer and stronger brand tones, image scrims, and status colors are automatic.', 'modern-catholic' ); ?></p>
 		<p><?php esc_html_e( 'Automatic contrast applies to solid brand and status backgrounds in supporting browsers. Photography always uses the On Image color with a scrim. Duotones are curated per variation because WordPress does not bind duotone filters to CSS variables.', 'modern-catholic' ); ?></p>
+
+		<h2><?php esc_html_e( 'Raised information panels', 'modern-catholic' ); ?></h2>
+		<p><?php esc_html_e( 'Select a Group or Column block and choose Raised Panel in its Styles controls, or add a class in Advanced → Additional CSS class(es). Use mc-card (or mc-card-accent1) for an Accent strip, mc-card-accent2 for Secondary, and mc-card-accent3 for Primary. Panel surfaces, borders, shadows, and strips follow the active palette; a background color selected directly on the block remains in control.', 'modern-catholic' ); ?></p>
 
 		<h2><?php esc_html_e( 'Curated variations', 'modern-catholic' ); ?></h2>
 		<div class="modern-catholic-style-guide__grid">

@@ -42,6 +42,16 @@ function modern_catholic_register_block_styles() {
 		)
 	);
 
+	foreach ( array( 'core/group', 'core/column' ) as $block_name ) {
+		register_block_style(
+			$block_name,
+			array(
+				'name'  => 'mc-card',
+				'label' => __( 'Raised Panel', 'modern-catholic' ),
+			)
+		);
+	}
+
 	register_block_style(
 		'core/navigation-submenu',
 		array(

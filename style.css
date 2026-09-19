@@ -7,7 +7,7 @@ Description: A modern block theme built specifically with the Catholic Church in
 Requires at least: 7.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Version: 1.8.3
+Version: 1.8.4
 License: GNU General Public License v3.0 only
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: modern-catholic
@@ -93,7 +93,7 @@ body.wp-theme-modern-catholic > :where(header, main, footer),
 body > .wp-site-blocks,
 .editor-styles-wrapper .is-root-container {
 	color: var(--wp--preset--color--foreground);
-	background-color: var(--wp--preset--color--surface);
+	background-color: var(--mc-color-canvas);
 	box-shadow: 0 0 2.5rem var(--modern-catholic-shadow-soft);
 }
 
@@ -103,8 +103,33 @@ body > .wp-site-blocks {
 
 body.wp-theme-modern-catholic > main {
 	color: var(--wp--preset--color--foreground);
-	background-color: var(--wp--preset--color--surface);
+	background-color: var(--mc-color-canvas);
 }
+
+/* Raised information panels use the selected palette, including editor-created blocks. */
+:is(.mc-card, .mc-card-accent1, .mc-card-accent2, .mc-card-accent3, .is-style-mc-card) {
+	--mc-card-strip: var(--mc-color-accent);
+	box-sizing: border-box;
+	border-style: solid;
+	border-width: 1px;
+	border-block-start-width: 0.25rem;
+	border-radius: 0.375rem;
+	box-shadow: 0 0.5rem 1.5rem var(--modern-catholic-shadow-soft);
+	padding: clamp(1.25rem, 2vw, 1.75rem);
+}
+
+:is(.mc-card, .mc-card-accent1, .mc-card-accent2, .mc-card-accent3, .is-style-mc-card):not(.has-border-color) {
+	border-color: var(--mc-color-border);
+	border-block-start-color: var(--mc-card-strip);
+}
+
+:is(.mc-card, .mc-card-accent1, .mc-card-accent2, .mc-card-accent3, .is-style-mc-card):not(.has-background) {
+	background-color: var(--mc-color-surface);
+}
+
+.mc-card-accent1 { --mc-card-strip: var(--mc-color-accent); }
+.mc-card-accent2 { --mc-card-strip: var(--mc-color-secondary); }
+.mc-card-accent3 { --mc-card-strip: var(--mc-color-primary); }
 
 .editor-styles-wrapper .is-root-container {
 	min-height: 100%;
@@ -141,6 +166,28 @@ body.wp-theme-modern-catholic > main {
 	flex-direction: column;
 	align-items: flex-end;
 	gap: 0.55rem;
+}
+
+.modern-catholic-header-tools {
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.modern-catholic-header-search {
+	margin: 0;
+	color: inherit;
+}
+
+.modern-catholic-header-search .wp-block-search__button {
+	min-width: 2.5rem;
+	min-height: 2.5rem;
+	padding: 0.5rem;
+	border: 0;
+	color: inherit;
+}
+
+.modern-catholic-header-search:not(.has-background) .wp-block-search__button {
+	background: transparent;
 }
 
 .modern-catholic-utility-navigation {

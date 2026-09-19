@@ -24,9 +24,10 @@ A modern WordPress block theme designed for Catholic parish websites, with seman
 - Semantic Canvas, Surface, Foreground, Primary, Secondary, and Accent color roles
 - Sanctuary, Marian Blue, Cloister Green, and Advent Violet style variations
 - Palette-aware gradients and photographic duotones
+- Raised information panels with palette-aware accent strips, available as a Group/Column style or `mc-card-accent1`, `mc-card-accent2`, and `mc-card-accent3` classes
 - Centralized parish name, Mass schedule, reconciliation, address, telephone, and email settings
 - Block Bindings and shortcodes for reusable parish information
-- Portable system-font typography and bundled paper texture with no external font dependency
+- Locally bundled Open Sans typography, an optional system font, and a bundled paper texture with no external font dependency
 
 ---
 
@@ -48,6 +49,13 @@ The theme owns presentation, templates, patterns, styles, and layout. Parish fun
 ---
 
 ## Changelog
+
+### 1.8.4
+
+- Add palette-aware raised information panels and reusable Accent, Secondary, and Primary strip classes.
+- Use Canvas for the content backdrop and Surface for raised panels, while preserving explicit editor-selected block backgrounds.
+- Bundle Open Sans locally as the default font, with the system font still selectable.
+- Add a desktop search icon to the shared header used by overlay and stacked layouts.
 
 ### 1.8.3
 
@@ -74,4 +82,4 @@ The theme owns presentation, templates, patterns, styles, and layout. Parish fun
 
 ## License
 
-Licensed under the GNU General Public License version 3.0 only (`GPL-3.0-only`). The bundled paper texture is distributed under the same license.
+Licensed under the GNU General Public License version 3.0 only (`GPL-3.0-only`). The bundled paper texture is distributed under the same license. Open Sans is bundled under the SIL Open Font License 1.1 in [`assets/fonts/open-sans/OFL.txt`](assets/fonts/open-sans/OFL.txt).
