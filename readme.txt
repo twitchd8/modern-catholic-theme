@@ -63,6 +63,10 @@ Select a Group or Column block and choose Raised Panel in the Styles controls. A
 
 == Changelog ==
 
+= 1.8.5 =
+* Document every raised-panel class in the admin Color & Style Guide with its palette role and an example use.
+* Clarify where to enter a class in the Site Editor and how the Raised Panel block style applies the default treatment.
+
 = 1.8.4 =
 * Give theme-owned information sections raised, palette-aware Surface panels over the Canvas background.
 * Add a reusable Raised Panel block style and mc-card-accent1, mc-card-accent2, and mc-card-accent3 classes for Accent, Secondary, and Primary strips.

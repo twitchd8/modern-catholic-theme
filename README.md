@@ -50,6 +50,11 @@ The theme owns presentation, templates, patterns, styles, and layout. Parish fun
 
 ## Changelog
 
+### 1.8.5
+
+- Add a raised-panel class reference to the admin Color & Style Guide, with palette-role descriptions and example uses.
+- Explain how to apply the classes or use the Raised Panel block style in the Site Editor.
+
 ### 1.8.4
 
 - Add palette-aware raised information panels and reusable Accent, Secondary, and Primary strip classes.
